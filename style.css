@@ -1,52 +1,40 @@
 /* =====================
-   Base / Variables
+   Base
 ===================== */
-:root {
-  --text: #2b2b2b;
-  --muted: rgba(0, 0, 0, 0.6);
-  --accent: #f2b705;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* =====================
+   Background
+===================== */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text);
-
-  /* 🌸 背景：更清晰的照片 + 柔和渐变 */
   background:
     linear-gradient(
-      to bottom,
-      rgba(255, 245, 225, 0.35),
-      rgba(255, 235, 210, 0.45),
-      rgba(255, 245, 225, 0.25)
+      rgba(255, 245, 220, 0.35),
+      rgba(255, 235, 210, 0.35)
     ),
     url("background.jpg") center / cover no-repeat fixed;
+
+  color: #2a2a2a;
 }
 
 /* =====================
-   Layout
-===================== */
-.container {
-  width: min(1100px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-/* =====================
-   Header / Nav
+   Header
 ===================== */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 20;
   background: transparent;
 }
@@ -55,7 +43,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 0;
+  padding: 14px 24px;
 }
 
 .brand {
@@ -65,190 +53,126 @@ body {
 }
 
 .brand-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  background: transparent;
 }
 
 .brand-text {
   font-weight: 600;
+  font-size: 18px;
 }
 
+/* =====================
+   Navigation
+===================== */
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 10px;
-  margin: 0;
+  gap: 14px;
   padding: 0;
+  margin: 0;
 }
 
 .nav-link {
   padding: 8px 14px;
-  border-radius: 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #444;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.55);
-  transition: all 0.2s ease;
 }
 
-.nav-link:hover,
 .nav-link.active {
-  color: #000;
-  background: rgba(255, 255, 255, 0.35);
-}
-
-/* JS scroll 状态也保持透明 */
-nav.scrolled {
-  background: transparent !important;
-  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.65);
 }
 
 /* =====================
    Hero
 ===================== */
 .hero {
-  min-height: 72vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 80px 0 40px;
 }
 
 .hero-inner {
-  max-width: 640px;
-}
-
-/* ⭐ 文字区域局部渐变遮罩（高级感来源） */
-.hero-inner::before {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.55),
-    rgba(255, 255, 255, 0.25),
-    rgba(255, 255, 255, 0)
-  );
-  z-index: -1;
-  border-radius: 24px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .hero-title {
-  margin: 0;
-  font-size: clamp(42px, 5.5vw, 64px);
+  font-size: clamp(42px, 6vw, 64px);
   font-weight: 700;
-  letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  letter-spacing: 1px;
 }
 
 .hero-subtitle {
-  margin-top: 14px;
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(0, 0, 0, 0.7);
-  max-width: 520px;
+  font-size: 16px;
+  max-width: 600px;
+  color: #444;
 }
 
 /* =====================
    Buttons
 ===================== */
-.hero-actions {
-  margin-top: 20px;
-  display: flex;
-  gap: 14px;
-}
-
 .btn {
+  display: inline-block;
   padding: 10px 18px;
-  border-radius: 16px;
-  border: none;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(6px);
-  transition: transform 0.15s ease;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: #222;
+  background: rgba(255,255,255,0.7);
 }
 
-.btn:hover {
-  transform: translateY(-1px);
+.btn.ghost {
+  background: transparent;
 }
 
 /* =====================
-   Intro / Slogan
+   Intro / Dynamic Quote
 ===================== */
 .intro {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .tagline {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.4px;
+  color: #555;
+  margin-bottom: 12px;
 }
 
+/* 核心：轻动态 */
 .dynamic-quote {
-  margin-top: 10px;
+  position: relative;
+  height: 56px;
+}
+
+.dynamic-quote span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.dynamic-quote span.active {
+  opacity: 1;
 }
 
 .dynamic-quote .zh {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.8);
+  color: #2b2b2b;
 }
 
 .dynamic-quote .en {
   margin-top: 6px;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.55);
-}
-
-/* =====================
-   Highlights（无卡片）
-===================== */
-.highlights {
-  padding: 70px 0 40px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.card {
-  background: transparent;
-}
-
-.card-title {
   font-size: 16px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.75);
-  margin-bottom: 6px;
+  color: #555;
 }
 
-.card-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.55);
-}
-
-/* =====================
-   Footer（干净结束）
-===================== */
-.site-footer {
-  background: transparent;
-  padding: 20px 0;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.45);
-  font-size: 13px;
-}
-
-/* =====================
-   Responsive
-===================== */
-@media (max-width: 860px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-list {
-    flex-wrap: wrap;
-  }
-}

@@ -1,18 +1,102 @@
+/* =====================
+   Spring Warm Theme (WORK / program page)
+   No dependency on style.css
+===================== */
 :root{
   --ink: #1f2a32;
+  --ink-soft: rgba(31, 42, 50, .78);
   --muted: rgba(31, 42, 50, .62);
+
+  /* spring palette */
+  --bg1: #fff6df;   /* creamy yellow */
+  --bg2: #ffe9ee;   /* soft pink */
+  --bg3: #e9fff1;   /* mint */
+
+  --card: rgba(255,255,255,.62);
+  --card-strong: rgba(255,255,255,.78);
   --border: rgba(31, 42, 50, .12);
-  --card-strong: rgba(255,255,255,.82);
+
   --radius: 18px;
   --shadow: 0 10px 28px rgba(0,0,0,.10);
 }
 
-/* ---- page container (doesn't touch your header styles) ---- */
+/* base reset */
+*{ box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* page background */
+body{
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1200px 600px at 18% -10%, rgba(255,246,223,.85), transparent 60%),
+    radial-gradient(1200px 600px at 85% 0%, rgba(255,233,238,.80), transparent 55%),
+    radial-gradient(1200px 600px at 55% 35%, rgba(233,255,241,.85), transparent 60%),
+    #f6f4f0;
+}
+
+/* =====================
+   NAV (fix your current "blue bullet list" issue)
+   Works with your existing HTML:
+   .site-header .header-inner .site-nav .nav-list .nav-link
+===================== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(31,42,50,.08);
+}
+
+.header-inner{
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.site-nav .nav-list{
+  list-style: none;          /* removes bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;             /* horizontal */
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.site-nav .nav-link{
+  text-decoration: none;     /* removes underline */
+  color: rgba(31,42,50,.78); /* remove default blue */
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: 8px 10px;
+  border-radius: 12px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.site-nav .nav-link:hover{
+  background: rgba(255,255,255,.60);
+  color: rgba(31,42,50,.92);
+  transform: translateY(-1px);
+}
+
+/* active state */
+.site-nav .nav-link.active{
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(31,42,50,.12);
+  color: rgba(31,42,50,.92);
+}
+
+/* =====================
+   Page layout
+===================== */
 .page-wrap{
   width: min(1080px, 92vw);
   margin: 0 auto;
   padding: 22px 0 36px;
-  color: var(--ink);
 }
 
 .page-hero{
@@ -21,7 +105,7 @@
 
 .page-title{
   margin: 0 0 10px;
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: clamp(34px, 4.2vw, 56px);
   letter-spacing: -0.03em;
 }
 
@@ -31,9 +115,9 @@
   line-height: 1.6;
 }
 
-.muted{ color: var(--muted); }
-
-/* ---- timeline ---- */
+/* =====================
+   Timeline
+===================== */
 .timeline{
   display: grid;
   gap: 22px;
@@ -77,7 +161,9 @@
   bottom: 18px;
 }
 
-/* ---- card (like your screenshot) ---- */
+/* =====================
+   Work Card (image + big title + meta + read more)
+===================== */
 .work-card{
   display: grid;
   grid-template-rows: 190px 1fr;
@@ -116,7 +202,7 @@
 
 .work-title{
   margin: 0;
-  font-size: clamp(24px, 3vw, 40px);
+  font-size: clamp(26px, 3.2vw, 44px);
   line-height: 1.12;
   letter-spacing: -0.03em;
 }
@@ -139,8 +225,8 @@
 
 .work-teaser{
   margin: 0;
-  color: rgba(31, 42, 50, .70);
-  line-height: 1.55;
+  color: rgba(31, 42, 50, .72);
+  line-height: 1.6;
 }
 
 .work-footer{
@@ -153,8 +239,8 @@
   display:inline-flex;
   align-items:center;
   gap: 10px;
-  font-weight: 700;
-  color: rgba(31, 42, 50, .72);
+  font-weight: 800;
+  color: rgba(31, 42, 50, .74);
 }
 
 .arrow{
@@ -163,7 +249,9 @@
   transform: translateY(1px);
 }
 
-/* ---- detail page ---- */
+/* =====================
+   Detail page (work-detail.html uses same CSS)
+===================== */
 .detail-head{
   padding: 12px 0 10px;
 }
@@ -173,7 +261,7 @@
   text-decoration:none;
   color: rgba(31,42,50,.72);
   margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .detail-head h1{
@@ -225,20 +313,20 @@
   line-height: 1.7;
 }
 
-/* ---- footer ---- */
+/* footer */
 .page-footer{
   padding-top: 22px;
 }
-
 .footer-text{
   margin: 0;
   color: var(--muted);
 }
 
-/* ---- responsive ---- */
+/* responsive */
 @media (max-width: 720px){
   .t-item{ grid-template-columns: 24px 1fr; }
   .work-card{ grid-template-rows: 165px 1fr; }
   .t-marker .dot{ margin-top: 12px; }
 }
+
 

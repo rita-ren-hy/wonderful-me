@@ -55,10 +55,13 @@ a.link {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(14px);
-  background: rgba(10, 10, 14, 0.6);
-  border-bottom: 1px solid var(--border);
+
+  /* 关键：去掉灰色框 */
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
 }
+
 .hero-title {
   text-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }

@@ -79,14 +79,14 @@ a {
 .nav-link {
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-soft);
+  color: rgba(40, 60, 45, 0.85);
   padding: 6px 10px;
   border-radius: 999px;
 }
 
 .nav-link.active {
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.55);
+  color: #2b3a2e; /* 深一点的自然绿 */
+  background: rgba(255, 255, 255, 0.75);
 }
 
 /* 你 JS 会加 scrolled，但我们保持透明 */

@@ -6,6 +6,8 @@ window.addEventListener("scroll", function () {
         nav.classList.remove("scrolled");
     }
 });
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const quoteEl = document.getElementById("dynamic-quote");
   if (!quoteEl) return;

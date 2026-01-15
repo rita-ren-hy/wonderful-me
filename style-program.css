@@ -1,6 +1,6 @@
 /* =====================
    Spring Warm Theme — WORK / Program
-   Nav style aligned with style-about.css
+   Nav style MATCHES style-about.css
 ===================== */
 :root{
   --ink: #1f2a32;
@@ -45,8 +45,8 @@ body{
 }
 
 /* =====================
-   Top Nav (aligned with style-about.css)
-   Works with your HTML:
+   Top Nav (IDENTICAL style to about)
+   Your HTML:
    header.site-header > .header-inner > nav.site-nav > ul.nav-list > a.nav-link
 ===================== */
 .site-header{
@@ -54,15 +54,13 @@ body{
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 14px 28px; /* 右侧空间稍微多一点 */
+  padding: 14px 18px; /* ✅ match about */
 }
 
+/* Keep header-inner neutral (no width constraints) */
 .header-inner{
   width: 100%;
-  max-width: 1400px;   /* 👈 放宽容器 */
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
+  margin: 0;
 }
 
 .site-nav{
@@ -78,7 +76,7 @@ body{
   box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
-/* IMPORTANT: your nav is a UL, so make it behave like a row */
+/* program.html uses <ul class="nav-list">, so we style it as a row */
 .nav-list{
   list-style: none;
   padding: 0;
@@ -143,7 +141,6 @@ body{
   margin-top: 18px;
 }
 
-/* timeline row */
 .t-item{
   display: grid;
   grid-template-columns: 34px 1fr;
@@ -151,7 +148,6 @@ body{
   align-items: stretch;
 }
 
-/* marker column */
 .t-marker{
   position: relative;
   display: flex;
@@ -183,7 +179,7 @@ body{
 }
 
 /* =====================
-   Work Card (match your "blog card" vibe)
+   Work Card
 ===================== */
 .work-card{
   display: grid;
@@ -213,7 +209,6 @@ body{
   object-fit: cover;
 }
 
-/* content */
 .work-body{
   padding: 18px 18px 14px;
   display: grid;
@@ -319,9 +314,9 @@ body{
 
 .detail-inner h2{
   margin: 14px 0 8px;
-  letter-spacing: -0.02em;
-  font-size: 16px;
+  letter-spacing: .4px;
   text-transform: uppercase;
+  font-size: 14px;
   color: rgba(31,42,50,.78);
 }
 
@@ -352,11 +347,6 @@ body{
 /* =====================
    Responsive
 ===================== */
-@media (max-width: 920px){
-  .header-inner{ justify-content: center; }
-  .site-nav{ margin: 0 auto; }
-}
-
 @media (max-width: 720px){
   .t-item{ grid-template-columns: 24px 1fr; }
   .work-card{ grid-template-rows: 165px 1fr; }

@@ -1,1 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Rita</title>
+
+  <!-- 复用你的全站字体/基础样式（如果你有 main.css，就换成你的） -->
+  <!-- <link rel="stylesheet" href="style-main.css" /> -->
+
+  <!-- Contact 专用样式 -->
+  <link rel="stylesheet" href="style-contact.css" />
+</head>
+
+<body>
+  <!-- ============== Fixed Capsule Nav (保持和你之前一致) ============== -->
+  <header class="site-header">
+    <nav class="nav capsule-nav">
+      <a class="brand" href="index.html">Rita</a>
+
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a class="active" href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============== Contact Hero ============== -->
+  <main class="page">
+    <section class="contact-hero">
+      <div class="hero-grid">
+        <!-- Left: copy -->
+        <div class="hero-copy">
+          <p class="eyebrow">Contact</p>
+          <h1>Let’s connect.</h1>
+          <p class="lead">
+            If you’d like to chat about analytics, projects, or opportunities,
+            feel free to reach out—email is the fastest way.
+          </p>
+
+          <div class="contact-cards">
+            <a class="card" href="mailto:yourname@email.com">
+              <div class="card-title">Email</div>
+              <div class="card-value">yourname@email.com</div>
+            </a>
+
+            <a class="card" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              <div class="card-title">LinkedIn</div>
+              <div class="card-value">linkedin.com/in/your-handle</div>
+            </a>
+
+            <a class="card" href="https://github.com/" target="_blank" rel="noopener">
+              <div class="card-title">GitHub</div>
+              <div class="card-value">github.com/your-handle</div>
+            </a>
+          </div>
+
+          <!-- Optional: small note -->
+          <p class="note">
+            Prefer a quick message? Use the form on the right.
+          </p>
+        </div>
+
+        <!-- Right: portrait “cut-out” -->
+        <div class="hero-portrait">
+          <div class="portrait-stage">
+            <!-- 背景软色块 -->
+            <div class="blob blob-1" aria-hidden="true"></div>
+            <div class="blob blob-2" aria-hidden="true"></div>
+
+            <!-- 人像 PNG（透明背景） -->
+            <img
+              class="portrait-img"
+              src="assets/img/contact-portrait.png"
+              alt="Portrait"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== Contact Form ============== -->
+    <section class="contact-panel">
+      <div class="panel">
+        <h2>Send a message</h2>
+        <p class="panel-sub">
+          This is a simple front-end form UI. If you want it to actually send,
+          we can connect it to Formspree / Netlify Forms later.
+        </p>
+
+        <form class="form" action="#" method="post">
+          <div class="row">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+          </div>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="6" placeholder="What would you like to talk about?"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Send</button>
+            <span class="hint">Usually replies within 1–2 days.</span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <small>© <span id="y"></span> Rita. All rights reserved.</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 

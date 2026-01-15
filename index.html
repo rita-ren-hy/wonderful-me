@@ -12,7 +12,7 @@
 <body>
   <!-- Header (只保留导航；去掉 logo + 名字) -->
   <header class="site-header">
-    <div class="header-inner">
+    <div class="container header-inner">
       <nav class="site-nav">
         <ul class="nav-list">
           <li><a class="nav-link active" href="index.html">HELLO</a></li>
@@ -25,10 +25,10 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <main>
+    <!-- Hero -->
     <section class="hero">
-      <div class="hero-inner">
+      <div class="container hero-inner">
         <h1 class="hero-title">HAOYUN REN</h1>
 
         <p class="hero-subtitle">
@@ -41,28 +41,37 @@
         </div>
 
         <!-- Intro / Dynamic Quote -->
-        <section class="intro">
+        <div class="intro">
           <p class="tagline">Analyst | Designer | Storyteller | Explorer</p>
 
           <p id="dynamic-quote" class="dynamic-quote" aria-live="polite">
-            <span class="zh active">从好奇开始，走向行动。</span>
-            <span class="en active">Where curiosity turns into action.</span>
+            <span class="zh">从好奇开始，走向行动。</span>
+            <span class="en">Where curiosity turns into action.</span>
           </p>
-        </section>
+        </div>
       </div>
     </section>
 
-    <!-- 你后面要加 section 的话，从这里开始加 -->
+    <!-- Projects 占位 -->
     <section id="projects" class="spacer"></section>
+
+    <!-- Contact section（必须有，不然导航 #contact 没用） -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:haoyunren219@gmail.com">haoyunren219@gmail.com</a></p>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer (Copyright 回来) -->
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
+    <div class="container footer-inner">
       © 2026 Haoyun Ren. All rights reserved.
     </div>
   </footer>
 </body>
 </html>
+
 
 

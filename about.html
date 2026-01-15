@@ -1,139 +1,99 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Haoyun Ren</title>
-
   <link rel="stylesheet" href="style-about.css" />
 </head>
 
 <body>
-  <!-- Header：只保留导航 -->
+  <!-- Top Nav -->
   <header class="site-header">
-    <div class="header-inner">
-      <nav class="site-nav">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="index.html">HELLO</a></li>
-          <li><a class="nav-link active" href="about.html">ABOUT</a></li>
-          <li><a class="nav-link" href="program.html">WORK</a></li>
-          <li><a class="nav-link" href="life-hobbies.html">LIFE</a></li>
-          <li><a class="nav-link" href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="site-nav">
+      <a class="nav-link" href="index.html">HELLO</a>
+      <a class="nav-link active" href="about.html">ABOUT</a>
+      <a class="nav-link" href="program.html">WORK</a>
+      <a class="nav-link" href="life-hobbies.html">LIFE</a>
+      <a class="nav-link" href="index.html#contact">CONTACT</a>
+    </nav>
   </header>
 
-  <main class="page">
-    <!-- Page hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-title">About</h1>
-        <p class="page-subtitle">
-          A small window into how I think, work, and grow.
-        </p>
+  <main class="about">
+    <section class="about-grid">
+      <!-- Left photo -->
+      <div class="photo-card" aria-label="Portrait photo">
+        <!-- 换成你的照片文件名，比如 about-photo.jpg -->
+        <img src="about-photo.jpg" alt="Haoyun Ren" />
       </div>
-    </section>
 
-    <!-- Content -->
-    <section class="content">
-      <div class="container two-col">
-        <!-- Left: narrative -->
-        <article class="story">
-          <section class="block">
-            <h2>Curiosity, made concrete</h2>
-            <p>
-              I’m someone who enjoys turning vague curiosity into something concrete —
-              a structure, a model, or a decision that makes sense.
-            </p>
-            <p>
-              I’m not driven by titles. I’m driven by questions that don’t yet have a clear answer.
-            </p>
-          </section>
+      <!-- Right content -->
+      <div class="content">
+        <h1>About</h1>
+        <p class="sub">
+          A quick snapshot of how I think, work, and grow.
+        </p>
 
-          <section class="block">
-            <h2>How I think</h2>
-            <p>
-              I like breaking complex problems into smaller, explainable pieces. Whether it’s data,
-              systems, or people, I care about understanding <em>why</em> something works before deciding
-              <em>how</em> to act.
-            </p>
-            <p>
-              Analytics, to me, is not about fancy models or dashboards. It’s a language — a way to clarify
-              assumptions, connect evidence to decisions, and move ideas forward with confidence.
-            </p>
-          </section>
+        <div class="chips">
+          <span class="chip">Analyst</span>
+          <span class="chip">Storyteller</span>
+          <span class="chip">Explorer</span>
+          <span class="chip">Designer-minded</span>
+        </div>
 
-          <section class="block">
-            <h2>What I’ve done</h2>
-            <p>
-              My background spans business analytics, finance, and operations. I’ve worked across market research,
-              financial analysis, e-commerce operations, and marketing support — and I enjoy translating data into
-              insights that are practical, communicable, and grounded in real-world context.
-            </p>
-            <p>
-              Beyond analytics, I care deeply about communication and people. As a PASS Leader and HR Chair at UBC,
-              I’ve designed learning experiences, supported large student cohorts, led cross-functional teams,
-              and helped ideas reach wider audiences through thoughtful storytelling and collaboration.
-            </p>
-          </section>
+        <div class="card">
+          <h2>In one line</h2>
+          <p>
+            Curious by nature, calm under pressure — I turn messy questions into clear decisions.
+          </p>
+        </div>
 
-          <section class="block">
-            <h2>Where I’m going</h2>
-            <p>
-              I’m currently exploring roles at the intersection of analytics, decision-making, and creative problem
-              solving — where structure meets intuition, and curiosity leads to action.
-            </p>
-            <p class="closing">
-              This space is a small window into how I think and work. If you’re curious too, welcome.
-            </p>
-          </section>
-        </article>
-
-        <!-- Right: highlights / quick facts -->
-        <aside class="side">
+        <div class="two">
           <div class="card">
-            <h3>In one line</h3>
-            <p class="muted">
-              Calm under pressure, curious by nature — and driven to turn insights into action.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>What I value</h3>
-            <ul class="list">
-              <li>Clarity over complexity</li>
-              <li>Evidence-based decisions</li>
-              <li>Storytelling that earns trust</li>
-              <li>Collaboration & growth</li>
+            <h2>What I do</h2>
+            <ul>
+              <li>Business & data analysis</li>
+              <li>Turning insights into action</li>
+              <li>Clear storytelling with visuals</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Core skills</h3>
-            <div class="chips">
-              <span class="chip">Python</span>
-              <span class="chip">SQL</span>
-              <span class="chip">Tableau</span>
-              <span class="chip">Excel</span>
-              <span class="chip">Data Visualization</span>
-              <span class="chip">Business Analysis</span>
-            </div>
+            <h2>What I value</h2>
+            <ul>
+              <li>Clarity over complexity</li>
+              <li>Evidence-based thinking</li>
+              <li>Warm, honest communication</li>
+            </ul>
           </div>
+        </div>
 
-          <div class="card">
-            <h3>Currently</h3>
-            <p class="muted">
-              Building projects that connect analytics, structured thinking, and creative problem solving.
-            </p>
+        <div class="card">
+          <h2>Core skills</h2>
+          <div class="skills">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Tableau</span>
+            <span class="pill">Excel</span>
+            <span class="pill">Data Viz</span>
+            <span class="pill">Business Analysis</span>
           </div>
-        </aside>
+        </div>
+
+        <div class="card note">
+          <h2>Currently</h2>
+          <p>
+            Building projects that blend analytics + structured thinking + creative problem solving.
+          </p>
+        </div>
       </div>
     </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">© 2026 Haoyun Ren. All rights reserved.</div>
+    © 2026 Haoyun Ren. All rights reserved.
   </footer>
 </body>
 </html>
+
 

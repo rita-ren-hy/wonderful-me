@@ -1,13 +1,16 @@
+// Nav scroll（保留）
 window.addEventListener("scroll", function () {
-    const nav = document.querySelector("nav");
-    if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
+  const nav = document.querySelector("nav");
+  if (!nav) return;
+
+  if (window.scrollY > 50) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
 });
 
-
+// Dynamic quote（轻呼吸）
 document.addEventListener("DOMContentLoaded", function () {
   const quoteEl = document.getElementById("dynamic-quote");
   if (!quoteEl) return;
@@ -32,18 +35,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let index = 0;
 
-  function changeSlogan() {
-    quoteEl.style.opacity = 0;
-
+  function fadeText(el, text) {
+    el.classList.remove("active");
     setTimeout(() => {
-      zhEl.textContent = slogans[index].zh;
-      enEl.textContent = slogans[index].en;
-      quoteEl.style.opacity = 1;
-      index = (index + 1) % slogans.length;
-    }, 400);
+      el.textContent = text;
+      el.classList.add("active");
+    }, 600);
   }
 
-  changeSlogan();
-  setInterval(changeSlogan, 6000);
+  function changeSlogan() {
+    fadeText(zhEl, slogans[index].zh);
+    fadeText(enEl, slogans[index].en);
+    index = (index + 1) % slogans.length;
+  }
+
+  zhEl.classList.add("active");
+  enEl.classList.add("active");
+
+  setInterval(changeSlogan, 5000);
 });
+
 

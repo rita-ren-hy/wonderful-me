@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const slogans = [
     { zh: "从好奇开始，走向行动。", en: "Where curiosity turns into action." },
     { zh: "欢迎走进我的世界，慢慢认识我。", en: "Welcome to my world — let’s get to know each other." },
-    { zh: "这里记录我思考、创造与成长的过程。", en: "A space where I think, create, and grow." }
+    { zh: "这里记录我思考、创造与成长的过程。", en: "A space where I think, create, and grow." },
+    { zh: "不只是简历，这是我。", en: "More than a resume."}
   ];
 
   let index = 0;

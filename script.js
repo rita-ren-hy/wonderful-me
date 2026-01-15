@@ -7,32 +7,41 @@ window.addEventListener("scroll", function () {
     }
 });
 document.addEventListener("DOMContentLoaded", function () {
-  const quoteElement = document.getElementById("dynamic-quote");
-  if (!quoteElement) return;
+  const quoteEl = document.getElementById("dynamic-quote");
+  if (!quoteEl) return;
 
-  const quotes = [
-    "从好奇开始，走向行动。",
-    "Where curiosity turns into action.",
-    "欢迎走进我的世界，慢慢认识我。",
-    "Welcome to my world — let’s get to know each other.",
-    "这里记录我思考、创造与成长的过程。",
-    "A space where I think, create, and grow.",
-    "不只是简历，这是我。",
-    "More than a resume."
+  const zhEl = quoteEl.querySelector(".zh");
+  const enEl = quoteEl.querySelector(".en");
+
+  const slogans = [
+    {
+      zh: "从好奇开始，走向行动。",
+      en: "Where curiosity turns into action."
+    },
+    {
+      zh: "欢迎走进我的世界，慢慢认识我。",
+      en: "Welcome to my world — let’s get to know each other."
+    },
+    {
+      zh: "这里记录我思考、创造与成长的过程。",
+      en: "A space where I think, create, and grow."
+    }
   ];
 
-  // 初始显示第一句（避免空白或闪烁）
-  quoteElement.textContent = quotes[0];
+  let index = 0;
 
-  function changeQuote() {
-    quoteElement.style.opacity = 0;
+  function changeSlogan() {
+    quoteEl.style.opacity = 0;
 
     setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      quoteElement.textContent = quotes[randomIndex];
-      quoteElement.style.opacity = 1;
-    }, 350);
+      zhEl.textContent = slogans[index].zh;
+      enEl.textContent = slogans[index].en;
+      quoteEl.style.opacity = 1;
+      index = (index + 1) % slogans.length;
+    }, 400);
   }
 
-  setInterval(changeQuote, 5000);
+  changeSlogan();
+  setInterval(changeSlogan, 6000);
 });
+

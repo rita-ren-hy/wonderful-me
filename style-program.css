@@ -54,11 +54,12 @@ body{
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 14px 18px;
+  padding: 14px 28px; /* 右侧空间稍微多一点 */
 }
 
 .header-inner{
-  width: min(1100px, 100%);
+  width: 100%;
+  max-width: 1400px;   /* 👈 放宽容器 */
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;

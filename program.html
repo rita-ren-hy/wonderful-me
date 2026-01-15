@@ -3,69 +3,68 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Program | Experience</title>
+  <title>WORK | Rita Ren</title>
 
-  <!-- 你的主样式（如果你有） -->
+  <!-- If you already have a global stylesheet, keep it here -->
   <!-- <link rel="stylesheet" href="style.css" /> -->
 
-  <!-- Program 页专用样式 -->
+  <!-- Work page stylesheet -->
   <link rel="stylesheet" href="program.css" />
 </head>
 
 <body>
-
-  <!-- 顶部导航：你可以替换成你现有的 navbar -->
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="index.html">Rita Ren</a>
-      <nav class="nav">
-        <a href="index.html#about">About</a>
-        <a class="active" href="program.html">Program</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#resume">Resume</a>
-        <a href="index.html#contact">Contact</a>
+  <!-- Header: your nav (kept as-is) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">HELLO</a></li>
+          <li><a class="nav-link" href="about.html">ABOUT</a></li>
+          <li><a class="nav-link active" href="program.html">WORK</a></li>
+          <li><a class="nav-link" href="projects.html">PROJECTS</a></li>
+          <li><a class="nav-link" href="life-hobbies.html">LIFE</a></li>
+          <li><a class="nav-link" href="resume.html">RESUME</a></li>
+          <li><a class="nav-link" href="contact.html">CONTACT</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-
-    <section class="hero">
-      <h1>Experience Roadmap</h1>
-      <p class="muted">
-        A timeline of my internships and key experiences — each entry expands into a full story.
+  <main class="page-wrap">
+    <section class="page-hero">
+      <h1 class="page-title">Work</h1>
+      <p class="page-subtitle">
+        A roadmap of my internship experiences — click each card to read the full story.
       </p>
     </section>
 
-    <section class="timeline" id="workTimeline">
+    <!-- Timeline -->
+    <section class="timeline" aria-label="Work timeline">
 
-      <!-- ========= Item 1 ========= -->
+      <!-- ===== Intern #1: E-commerce ===== -->
       <article class="t-item">
-        <div class="t-marker">
+        <div class="t-marker" aria-hidden="true">
           <span class="dot"></span>
           <span class="line"></span>
         </div>
 
-        <a class="work-card" href="work-detail.html?id=ops-assistant">
+        <a class="work-card" href="work-detail.html?id=ecom-intern" aria-label="Read more about E-commerce Operating Intern">
           <div class="work-cover">
-            <img src="assets/work/ops.jpg" alt="Operations Assistant cover" loading="lazy">
+            <!-- Replace with your own image -->
+            <img src="assets/work/ecom.jpg" alt="E-commerce internship cover" loading="lazy">
           </div>
 
           <div class="work-body">
-            <h2 class="work-title">Operations Assistant — Internship</h2>
+            <h2 class="work-title">E-commerce Operating Intern — Hongzhimei</h2>
 
             <div class="work-meta">
-              <span class="meta-item">
-                <span class="meta-ico">📅</span>2024-06
-              </span>
-              <span class="meta-item">
-                <span class="meta-ico">🏷️</span>Operations / Data / Execution
-              </span>
+              <span class="meta-item"><span class="meta-ico">📅</span>Jun 2024 – Aug 2024</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>Market Research · Pricing · Conversion</span>
             </div>
 
             <p class="work-teaser">
-              Supported day-to-day operations through research, reporting, and cross-team coordination.
-              Focused on making workflows clearer and execution faster.
+              Turned ambiguous “what to sell/how to promote” questions into an analysis workflow:
+              competitor teardown → customer segmentation → pricing & positioning → content strategy.
             </p>
 
             <div class="work-footer">
@@ -75,69 +74,30 @@
         </a>
       </article>
 
-      <!-- ========= Item 2 ========= -->
+      <!-- ===== Intern #2: Accounting ===== -->
       <article class="t-item">
-        <div class="t-marker">
+        <div class="t-marker" aria-hidden="true">
           <span class="dot"></span>
           <span class="line"></span>
         </div>
 
-        <a class="work-card" href="work-detail.html?id=fyidoctors-ba">
+        <a class="work-card" href="work-detail.html?id=accounting-intern" aria-label="Read more about Accounting Intern">
           <div class="work-cover">
-            <img src="assets/work/fyidoctors.jpg" alt="FYidoctors project cover" loading="lazy">
+            <!-- Replace with your own image -->
+            <img src="assets/work/accounting.jpg" alt="Accounting internship cover" loading="lazy">
           </div>
 
           <div class="work-body">
-            <h2 class="work-title">Business Analyst — FYidoctors × Tsawout</h2>
+            <h2 class="work-title">Accounting Intern — Guotai Junan Securities</h2>
 
             <div class="work-meta">
-              <span class="meta-item">
-                <span class="meta-ico">📅</span>2024-10
-              </span>
-              <span class="meta-item">
-                <span class="meta-ico">🏷️</span>Healthcare / Community Partnership
-              </span>
+              <span class="meta-item"><span class="meta-ico">📅</span>May 2023 – Jul 2023</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>Financial Analysis · Benchmarking · Compliance</span>
             </div>
 
             <p class="work-teaser">
-              Helped shape a community clinic proposal with a data-driven approach:
-              demand thinking, workflow planning, and stakeholder alignment.
-            </p>
-
-            <div class="work-footer">
-              <span class="readmore">Read more <span class="arrow">›</span></span>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <!-- ========= Item 3（示例：你可以删掉或改成 PASS/TA 等） ========= -->
-      <article class="t-item">
-        <div class="t-marker">
-          <span class="dot"></span>
-          <span class="line"></span>
-        </div>
-
-        <a class="work-card" href="work-detail.html?id=pass-leader">
-          <div class="work-cover">
-            <img src="assets/work/pass.jpg" alt="PASS Leader cover" loading="lazy">
-          </div>
-
-          <div class="work-body">
-            <h2 class="work-title">PASS Leader — UBC Sauder</h2>
-
-            <div class="work-meta">
-              <span class="meta-item">
-                <span class="meta-ico">📅</span>2024–2025
-              </span>
-              <span class="meta-item">
-                <span class="meta-ico">🏷️</span>Teaching / Communication / Analytics
-              </span>
-            </div>
-
-            <p class="work-teaser">
-              Built review materials and interactive sessions for hundreds of students.
-              Optimized content using feedback + learning patterns.
+              Supported standardized reporting and cross-subsidiary benchmarking to surface material variances,
+              while strengthening data traceability for audit readiness.
             </p>
 
             <div class="work-footer">
@@ -149,10 +109,9 @@
 
     </section>
 
-    <footer class="foot">
-      <p class="muted">© <span id="year"></span> Rita Ren</p>
+    <footer class="page-footer">
+      <p class="footer-text">© <span id="year"></span> Rita Ren</p>
     </footer>
-
   </main>
 
   <script>
@@ -160,4 +119,5 @@
   </script>
 </body>
 </html>
+
 

@@ -101,7 +101,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* Left photo */
 .photo-card{
-  margin-top: 40px; /* 👈 图片整体往下 */
+  margin-top: 50px; /* 👈 图片整体往下 */
   border-radius: var(--radius);
   overflow: hidden;
   background: rgba(255,255,255,.45);

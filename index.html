@@ -1,60 +1,115 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanlin Zhao - Personal Web</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haoyun Ren - Personal Website</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
+
 <body>
-    <header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">HELLO</a></li>
-            <li><a href="about.html">PROFILE</a></li>
-            <li><a href="program.html">PROGRAMS</a></li>
-            <li><a href="life-hobbies.html">LIFE & HOBBIES</a></li>
-            
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand / Logo -->
+      <a class="brand" href="index.html" aria-label="Home">
+        <img
+          class="brand-logo"
+          src="logo.png"
+          alt="Haoyun Ren Logo"
+        />
+        <span class="brand-text">Haoyun Ren</span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link active" href="index.html">HELLO</a></li>
+          <li><a class="nav-link" href="about.html">PROFILE</a></li>
+          <li><a class="nav-link" href="program.html">PROGRAMS</a></li>
+          <li>
+            <a class="nav-link" href="life-hobbies.html">
+              LIFE &amp; HOBBIES
+            </a>
+          </li>
         </ul>
-    </nav>
-</header>
-
-    <div class="hero">
-        <h1>HANLIN ZHAO</h1>
-        <p>Hi👋, many HRs are interested in other's websites. So, I made one.</p>
+      </nav>
     </div>
+  </header>
 
-    <section class="intro">
-        <p>Analyst | Designer | Poet | Hiker</p>
-        <p id="dynamic-quote">Create, Adapt, Excel.</p>
+  <!-- Main -->
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">HAOYUN REN</h1>
+        <p class="hero-subtitle">
+          Hi 👋 I built this site to showcase my work and projects.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="program.html">View Projects</a>
+          <a class="btn ghost" href="about.html">About Me</a>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <p>© 2025 Hanlin Zhao. All rights reserved.</p>
-    </footer>
+    <!-- Intro -->
+    <section class="intro">
+      <div class="container intro-inner">
+        <p class="tagline">
+          Analyst | Designer | Storyteller | Explorer
+        </p>
+        <p id="dynamic-quote" class="dynamic-quote">
+          xxx
+        </p>
+      </div>
+    </section>
 
-    <script>
-        const quotes = [
-            "Dare to explore, strive to lead.",
-            "Logic meets creativity.",
-            "Chase growth, embrace change.",
-            "Redefining limits, unlocking potential."
-        ];
-        function changeQuote() {
-            const quoteElement = document.getElementById("dynamic-quote");
-            quoteElement.style.opacity = 0;
-            setTimeout(() => {
-                const randomIndex = Math.floor(Math.random() * quotes.length);
-                quoteElement.textContent = quotes[randomIndex];
-                quoteElement.style.opacity = 1;
-            }, 500);
-        }
-        setInterval(changeQuote, 5000);
-    </script>
+    <!-- Highlights -->
+    <section class="highlights">
+      <div class="container">
+        <div class="grid-3">
+          <article class="card">
+            <h2 class="card-title">Skills</h2>
+            <p class="card-text">
+              Python · SQL · Tableau · Excel · Data Visualization
+            </p>
+          </article>
+
+          <article class="card">
+            <h2 class="card-title">Projects</h2>
+            <p class="card-text">
+              Business analytics, insights, and decision-focused work.
+            </p>
+          </article>
+
+          <article class="card">
+            <h2 class="card-title">Contact</h2>
+            <p class="card-text">
+              Email:
+              <a class="link" href="mailto:your.email@example.com">
+                your.email@example.com
+              </a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Haoyun Ren. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
+

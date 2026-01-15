@@ -28,11 +28,15 @@ body {
   margin: 0;
   font-family: "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Arial, sans-serif;
+
   background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(116, 86, 255, 0.25), transparent 55%),
-    radial-gradient(900px 600px at 80% 30%, rgba(0, 200, 255, 0.18), transparent 55%),
-    var(--bg);
-  color: var(--text);
+    linear-gradient(
+      rgba(255, 248, 235, 0.88),
+      rgba(255, 235, 210, 0.88)
+    ),
+    url("background.jpg") center / cover no-repeat fixed;
+
+  color: #2b2b2b;
 }
 
 a {

@@ -1,11 +1,8 @@
-// 可选：如果你还想保留“滚动时加 class”逻辑，可以保留。
-// 但我们 CSS 里已经让它保持透明，所以不会变灰。
+// 保持 nav 透明（即使滚动也不出现灰条）
 window.addEventListener("scroll", function () {
   const nav = document.querySelector(".site-nav");
   if (!nav) return;
-
-  if (window.scrollY > 50) nav.classList.add("scrolled");
-  else nav.classList.remove("scrolled");
+  nav.classList.toggle("scrolled", window.scrollY > 50);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,14 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const zhEl = quoteEl.querySelector(".zh");
   const enEl = quoteEl.querySelector(".en");
+  if (!zhEl || !enEl) return;
 
   const slogans = [
     { zh: "从好奇开始，走向行动。", en: "Where curiosity turns into action." },
     { zh: "欢迎走进我的世界，慢慢认识我。", en: "Welcome to my world — let’s get to know each other." },
-    { zh: "这里记录我思考、创造与成长的过程。", en: "A space where I think, create, and grow." },
+    { zh: "这里记录我思考、创造与成长的过程。", en: "A space where I think, create, and grow." }
   ];
 
-  let i = 0;
+  let index = 0;
 
   function setActive(isActive) {
     zhEl.classList.toggle("active", isActive);
@@ -32,20 +30,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // 先淡出
     setActive(false);
 
-    // 再换文本 + 淡入
+    // 等淡出完成后换字，再淡入
     setTimeout(() => {
-      zhEl.textContent = slogans[i].zh;
-      enEl.textContent = slogans[i].en;
+      zhEl.textContent = slogans[index].zh;
+      enEl.textContent = slogans[index].en;
+
       setActive(true);
-      i = (i + 1) % slogans.length;
-    }, 600);
+      index = (index + 1) % slogans.length;
+    }, 900);
   }
 
-  // 初始显示
+  // 初始化：先显示第一句
   setActive(true);
-  // 循环
-  setInterval(changeSlogan, 5500);
+
+  // 每 6 秒换一次，呼吸感
+  setInterval(changeSlogan, 3000);
 });
+
 
 
 

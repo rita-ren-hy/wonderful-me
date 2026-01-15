@@ -6,8 +6,8 @@
   --text-soft: rgba(43, 58, 46, 0.82);
   --text-light: rgba(43, 58, 46, 0.62);
 
-  /* 背景叠层：数值越小，背景越清晰 */
-  --overlay: 0.12;
+  /* ✅ 背景叠层：更清晰 = 数值更小 */
+  --overlay: 0.10;
 
   --side-pad: 32px;
 }
@@ -70,17 +70,29 @@ a {
   margin: 0;
 }
 
+/* ✅ 导航字体白色 */
 .nav-link {
   font-size: 14px;
-  font-weight: 600;
-  color: rgba(40, 60, 45, 0.85);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
   padding: 6px 12px;
   border-radius: 999px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 }
 
+/* ✅ active 仍然是浅色 pill，但字更深，清晰 */
 .nav-link.active {
-  background: rgba(255, 255, 255, 0.75);
-  color: #2b3a2e;
+  background: rgba(255, 255, 255, 0.78);
+  color: #203027;
+  text-shadow: none;
+}
+
+/* ✅ 防止你 JS 加 scrolled 时出现任何灰条 */
+.site-nav.scrolled,
+.site-header.scrolled {
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
 }
 
 /* =====================
@@ -94,13 +106,12 @@ a {
   padding: 120px var(--side-pad) 80px;
 }
 
-/* ⬆️ 关键在这里：整体向上提 */
+/* ✅ 你要：名字+Hi 往上移一点
+   所以整体向上提一点（轻微） */
 .hero-inner {
   width: min(900px, 100%);
   text-align: center;
-
-  /* 👇 向上移动 */
-  transform: translateY(-40px);
+  transform: translateY(-26px);
 }
 
 /* =====================
@@ -112,60 +123,40 @@ a {
   font-weight: 900;
   letter-spacing: 1px;
   color: var(--text-main);
-  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.55);
 }
 
 /* =====================
    Subtitle (Hi 那一行)
 ===================== */
 .hero-subtitle {
-  margin: 0 auto 22px;
+  margin: 0 auto 0;   /* ✅ 不要在这里拉开太大 */
   max-width: 680px;
   font-size: 18px;
   line-height: 1.75;
   color: var(--text-soft);
-  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.55);
 }
 
-/* =====================
-   Buttons
-===================== */
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-bottom: 30px;
-}
-
-.btn {
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(31, 42, 50, 0.25);
-  background: rgba(255, 255, 255, 0.68);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.85);
-}
+/* ✅ 你已经不要按钮了，所以不需要 hero-actions / btn 了
+   如果你以后要按钮再加回去即可 */
 
 /* =====================
    Intro / Dynamic Quote
 ===================== */
+
+/* ✅ 关键：从 Analyst 那行开始往下挪（到衣服区域附近开始）
+   这里用 margin-top 做“整体下移”，不会影响名字+Hi  */
 .intro {
-  margin-top: 6px;
+  margin-top: 150px;
 }
 
 .tagline {
   margin: 0 0 14px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-soft);
-  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.65);
+  font-size: 18px;          /* ✅ 你要灰字变大 */
+  font-weight: 800;
+  color: rgba(43, 58, 46, 0.90);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
 }
 
 .dynamic-quote {
@@ -173,6 +164,7 @@ a {
   margin: 0 auto;
 }
 
+/* ✅ 轻动态“呼吸感”：靠 active 切换透明度 */
 .dynamic-quote span {
   display: block;
   opacity: 0;
@@ -183,23 +175,67 @@ a {
   opacity: 1;
 }
 
+/* 中文 */
 .dynamic-quote .zh {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--text-main);
+  font-size: 30px;
+  font-weight: 900;
+  color: #24312a;
   text-shadow: 0 2px 20px rgba(255, 255, 255, 0.65);
 }
 
+/* ✅ 英文：加深（你最后说“加深”） */
 .dynamic-quote .en {
-  margin-top: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-soft);
-  text-shadow: 0 2px 22px rgba(255, 255, 255, 0.72);
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #2f3f34;
+  text-shadow: 0 2px 22px rgba(255, 255, 255, 0.68);
 }
 
 /* =====================
-   Footer
+   Contact Section
+===================== */
+.contact {
+  padding: 90px var(--side-pad) 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-inner {
+  width: min(900px, 100%);
+  text-align: center;
+}
+
+.contact-title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #24312a;
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.65);
+}
+
+.contact-text {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(43, 58, 46, 0.9);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
+}
+
+/* ✅ 不要“超链接蓝色+下划线”那种感觉 */
+.contact-link {
+  color: #24312a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(36, 49, 42, 0.35);
+  padding-bottom: 2px;
+}
+
+.contact-link:hover {
+  border-bottom-color: rgba(36, 49, 42, 0.75);
+}
+
+/* =====================
+   Footer（无黑条）
 ===================== */
 .site-footer {
   padding: 22px var(--side-pad);
@@ -221,22 +257,38 @@ a {
     --side-pad: 18px;
   }
 
+  .nav-list {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
   .hero-inner {
-    transform: translateY(-28px); /* 手机上少移一点 */
+    transform: translateY(-18px);
+  }
+
+  /* 手机上 intro 下移少一点 */
+  .intro {
+    margin-top: 105px;
   }
 
   .hero-subtitle {
     font-size: 16px;
   }
 
+  .tagline {
+    font-size: 16px;
+  }
+
   .dynamic-quote .zh {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .dynamic-quote .en {
     font-size: 16px;
   }
 }
+
 
 
 

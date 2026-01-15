@@ -2,14 +2,13 @@
    Root Variables
 ===================== */
 :root {
-  --text-main: #1f2a32;
-  --text-soft: rgba(31, 42, 50, 0.78);
-  --text-light: rgba(31, 42, 50, 0.60);
+  --text-main: #2b3a2e;
+  --text-soft: rgba(43, 58, 46, 0.82);
+  --text-light: rgba(43, 58, 46, 0.62);
 
-  /* 背景叠层：越小越“清晰”，越大越“淡” */
+  /* 背景叠层：数值越小，背景越清晰 */
   --overlay: 0.12;
 
-  /* 页面左右留白 */
   --side-pad: 32px;
 }
 
@@ -31,7 +30,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
     "PingFang SC", "Hiragino Sans GB", sans-serif;
 
-  /* 背景：不再那么淡（overlay 0.12） */
   background:
     linear-gradient(
       rgba(255, 244, 220, var(--overlay)),
@@ -61,11 +59,7 @@ a {
 .header-inner {
   padding: 14px var(--side-pad);
   display: flex;
-  justify-content: flex-end; /* 导航靠右 */
-}
-
-.site-nav {
-  background: transparent;
+  justify-content: flex-end;
 }
 
 .nav-list {
@@ -80,39 +74,40 @@ a {
   font-size: 14px;
   font-weight: 600;
   color: rgba(40, 60, 45, 0.85);
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
 }
 
 .nav-link.active {
-  color: #2b3a2e; /* 深一点的自然绿 */
   background: rgba(255, 255, 255, 0.75);
-}
-
-/* 你 JS 会加 scrolled，但我们保持透明 */
-.site-nav.scrolled {
-  background: transparent !important;
+  color: #2b3a2e;
 }
 
 /* =====================
-   Hero (整体居中)
+   Hero
 ===================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; /* 水平居中 */
-  padding: 120px var(--side-pad) 80px; /* 顶部给导航留空间 */
+  justify-content: center;
+  padding: 120px var(--side-pad) 80px;
 }
 
+/* ⬆️ 关键在这里：整体向上提 */
 .hero-inner {
   width: min(900px, 100%);
-  text-align: center; /* 文本居中 */
+  text-align: center;
+
+  /* 👇 向上移动 */
+  transform: translateY(-40px);
 }
 
-/* Title */
+/* =====================
+   Title
+===================== */
 .hero-title {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   font-size: clamp(46px, 6vw, 76px);
   font-weight: 900;
   letter-spacing: 1px;
@@ -120,7 +115,9 @@ a {
   text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
 }
 
-/* Subtitle */
+/* =====================
+   Subtitle (Hi 那一行)
+===================== */
 .hero-subtitle {
   margin: 0 auto 22px;
   max-width: 680px;
@@ -130,12 +127,14 @@ a {
   text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
 }
 
-/* Buttons */
+/* =====================
+   Buttons
+===================== */
 .hero-actions {
   display: flex;
   justify-content: center;
   gap: 14px;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -158,24 +157,22 @@ a {
    Intro / Dynamic Quote
 ===================== */
 .intro {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .tagline {
   margin: 0 0 14px;
   font-size: 16px;
   font-weight: 600;
-  color: rgba(31, 42, 50, 0.70);
+  color: var(--text-soft);
   text-shadow: 0 2px 18px rgba(255, 255, 255, 0.65);
 }
 
-/* breathing 容器 */
 .dynamic-quote {
-  margin: 0 auto;
   max-width: 760px;
+  margin: 0 auto;
 }
 
-/* 默认都隐藏，靠 .active 显示 */
 .dynamic-quote span {
   display: block;
   opacity: 0;
@@ -186,7 +183,6 @@ a {
   opacity: 1;
 }
 
-/* 中文 */
 .dynamic-quote .zh {
   font-size: 26px;
   font-weight: 800;
@@ -194,17 +190,16 @@ a {
   text-shadow: 0 2px 20px rgba(255, 255, 255, 0.65);
 }
 
-/* 英文 */
 .dynamic-quote .en {
   margin-top: 8px;
   font-size: 18px;
   font-weight: 700;
-  color: rgba(31, 42, 50, 0.78);
+  color: var(--text-soft);
   text-shadow: 0 2px 22px rgba(255, 255, 255, 0.72);
 }
 
 /* =====================
-   Footer (不再有黑条)
+   Footer
 ===================== */
 .site-footer {
   padding: 22px var(--side-pad);
@@ -218,11 +213,6 @@ a {
   text-shadow: 0 2px 16px rgba(255, 255, 255, 0.6);
 }
 
-/* 占位用：你想往下加 sections 时 */
-.spacer {
-  height: 1px;
-}
-
 /* =====================
    Responsive
 ===================== */
@@ -231,10 +221,8 @@ a {
     --side-pad: 18px;
   }
 
-  .nav-list {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  .hero-inner {
+    transform: translateY(-28px); /* 手机上少移一点 */
   }
 
   .hero-subtitle {
@@ -249,6 +237,7 @@ a {
     font-size: 16px;
   }
 }
+
 
 
 

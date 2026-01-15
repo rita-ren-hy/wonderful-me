@@ -1,5 +1,20 @@
 /* =====================
-   Base
+   Root Variables
+===================== */
+:root {
+  --text-main: #1f2a32;
+  --text-soft: rgba(31, 42, 50, 0.78);
+  --text-light: rgba(31, 42, 50, 0.60);
+
+  /* 背景叠层：越小越“清晰”，越大越“淡” */
+  --overlay: 0.12;
+
+  /* 页面左右留白 */
+  --side-pad: 32px;
+}
+
+/* =====================
+   Reset
 ===================== */
 *,
 *::before,
@@ -8,154 +23,161 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
 }
 
-/* =====================
-   Background
-===================== */
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", sans-serif;
+
+  /* 背景：不再那么淡（overlay 0.12） */
   background:
     linear-gradient(
-      rgba(255, 245, 220, 0.35),
-      rgba(255, 235, 210, 0.35)
+      rgba(255, 244, 220, var(--overlay)),
+      rgba(255, 236, 200, var(--overlay))
     ),
     url("background.jpg") center / cover no-repeat fixed;
 
-  color: #2a2a2a;
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* =====================
-   Header
+   Header / Nav
 ===================== */
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 30;
   background: transparent;
 }
 
 .header-inner {
+  padding: 14px var(--side-pad);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 24px;
+  justify-content: flex-end; /* 导航靠右 */
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand-logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
+.site-nav {
   background: transparent;
 }
 
-.brand-text {
-  font-weight: 600;
-  font-size: 18px;
-}
-
-/* =====================
-   Navigation
-===================== */
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 14px;
+  gap: 22px;
   padding: 0;
   margin: 0;
 }
 
 .nav-link {
-  padding: 8px 14px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #444;
   font-size: 14px;
+  font-weight: 600;
+  color: var(--text-soft);
+  padding: 6px 10px;
+  border-radius: 999px;
 }
 
 .nav-link.active {
-  background: rgba(255, 255, 255, 0.65);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* 你 JS 会加 scrolled，但我们保持透明 */
+.site-nav.scrolled {
+  background: transparent !important;
 }
 
 /* =====================
-   Hero
+   Hero (整体居中)
 ===================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center; /* 水平居中 */
+  padding: 120px var(--side-pad) 80px; /* 顶部给导航留空间 */
 }
 
 .hero-inner {
-  margin-top: 120px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  width: min(900px, 100%);
+  text-align: center; /* 文本居中 */
 }
 
+/* Title */
 .hero-title {
-  font-size: clamp(42px, 6vw, 64px);
-  font-weight: 700;
+  margin: 0 0 12px;
+  font-size: clamp(46px, 6vw, 76px);
+  font-weight: 900;
   letter-spacing: 1px;
+  color: var(--text-main);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
 }
 
+/* Subtitle */
 .hero-subtitle {
-  font-size: 16px;
-  max-width: 600px;
-  color: #444;
+  margin: 0 auto 22px;
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-soft);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.6);
 }
 
-/* =====================
-   Buttons
-===================== */
+/* Buttons */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 34px;
+}
+
 .btn {
-  display: inline-block;
   padding: 10px 18px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.2);
-  text-decoration: none;
-  color: #222;
-  background: rgba(255,255,255,0.7);
+  border-radius: 999px;
+  border: 1px solid rgba(31, 42, 50, 0.25);
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
-.btn.ghost {
-  background: transparent;
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 /* =====================
    Intro / Dynamic Quote
 ===================== */
 .intro {
-  margin-top: 40px;
+  margin-top: 8px;
 }
 
 .tagline {
-  font-size: 14px;
-  letter-spacing: 0.4px;
-  color: #555;
-  margin-bottom: 12px;
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(31, 42, 50, 0.70);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.65);
 }
 
-/* 核心：轻动态 */
+/* breathing 容器 */
 .dynamic-quote {
-  position: relative;
-  height: 56px;
+  margin: 0 auto;
+  max-width: 760px;
 }
 
+/* 默认都隐藏，靠 .active 显示 */
 .dynamic-quote span {
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: block;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -164,15 +186,68 @@ body {
   opacity: 1;
 }
 
+/* 中文 */
 .dynamic-quote .zh {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2b2b2b;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.65);
 }
 
+/* 英文 */
 .dynamic-quote .en {
-  margin-top: 6px;
-  font-size: 16px;
-  color: #555;
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(31, 42, 50, 0.78);
+  text-shadow: 0 2px 22px rgba(255, 255, 255, 0.72);
 }
+
+/* =====================
+   Footer (不再有黑条)
+===================== */
+.site-footer {
+  padding: 22px var(--side-pad);
+  background: transparent;
+}
+
+.footer-inner {
+  font-size: 13px;
+  color: var(--text-light);
+  text-align: center;
+  text-shadow: 0 2px 16px rgba(255, 255, 255, 0.6);
+}
+
+/* 占位用：你想往下加 sections 时 */
+.spacer {
+  height: 1px;
+}
+
+/* =====================
+   Responsive
+===================== */
+@media (max-width: 768px) {
+  :root {
+    --side-pad: 18px;
+  }
+
+  .nav-list {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .dynamic-quote .zh {
+    font-size: 22px;
+  }
+
+  .dynamic-quote .en {
+    font-size: 16px;
+  }
+}
+
 

@@ -3,114 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haoyun Ren - Personal Website</title>
+  <title>Haoyun Ren</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
 </head>
 
 <body>
+
   <!-- Header -->
   <header class="site-header">
-    <div class="container header-inner">
-      <!-- Brand / Logo -->
-      <a class="brand" href="index.html" aria-label="Home">
-        <img
-          class="brand-logo"
-          src="logo.png"
-          alt="Haoyun Ren Logo"
-        />
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="logo.png" alt="Logo" class="brand-logo" />
         <span class="brand-text">Haoyun Ren</span>
-      </a>
+      </div>
 
-      <!-- Navigation -->
-      <nav class="nav" aria-label="Primary navigation">
+      <nav>
         <ul class="nav-list">
-          <li><a class="nav-link active" href="index.html">HELLO</a></li>
+          <li><a class="nav-link active" href="#">HELLO</a></li>
           <li><a class="nav-link" href="about.html">PROFILE</a></li>
           <li><a class="nav-link" href="program.html">PROGRAMS</a></li>
-          <li>
-            <a class="nav-link" href="life-hobbies.html">
-              LIFE &amp; HOBBIES
-            </a>
-          </li>
+          <li><a class="nav-link" href="life-hobbies.html">LIFE & HOBBIES</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- Hero -->
   <main>
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
+
         <h1 class="hero-title">HAOYUN REN</h1>
+
         <p class="hero-subtitle">
           Hi 👋 I turn curiosity into action through analytics and structured thinking.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="program.html">View Projects</a>
-          <a class="btn ghost" href="about.html">About Me</a>
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="about.html" class="btn ghost">About Me</a>
         </div>
-      </div>
-    </section>
 
-    <!-- Intro -->
-    <section class="intro">
-      <div class="container intro-inner">
-        <p class="tagline">
-          Analyst | Designer | Storyteller | Explorer
-        </p>
-        <p id="dynamic-quote" class="dynamic-quote">
-  <span class="zh"></span><br />
-  <span class="en"></span>
-</p>
-      </div>
-    </section>
+        <!-- Dynamic Quote -->
+        <div class="intro">
+          <p class="tagline">Analyst | Designer | Storyteller | Explorer</p>
 
-    <!-- Highlights -->
-    <section class="highlights">
-      <div class="container">
-        <div class="grid-3">
-          <article class="card">
-            <h2 class="card-title">Skills</h2>
-            <p class="card-text">
-              Python · SQL · Tableau · Excel · Data Visualization
-            </p>
-          </article>
-
-          <article class="card">
-            <h2 class="card-title">Projects</h2>
-            <p class="card-text">
-              Business analytics, insights, and decision-focused work.
-            </p>
-          </article>
-
-          <article class="card">
-            <h2 class="card-title">Contact</h2>
-            <p class="card-text">
-              Email:
-              <a class="link" href="mailto:your.email@example.com">
-                haoyunren219@gmail.com
-              </a>
-            </p>
-          </article>
+          <div id="dynamic-quote" class="dynamic-quote">
+            <span class="zh active">从好奇开始，走向行动。</span>
+            <span class="en">Where curiosity turns into action.</span>
+          </div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 Haoyun Ren. All rights reserved.</p>
-    </div>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
+
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanlin Zhao - Personal Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HELLO</a></li>
+            <li><a href="about.html">PROFILE</a></li>
+            <li><a href="program.html">PROGRAMS</a></li>
+            <li><a href="life-hobbies.html">LIFE & HOBBIES</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+    <div class="hero">
+        <h1>HANLIN ZHAO</h1>
+        <p>Hi👋, many HRs are interested in other's websites. So, I made one.</p>
+    </div>
+
+    <section class="intro">
+        <p>Analyst | Designer | Poet | Hiker</p>
+        <p id="dynamic-quote">Create, Adapt, Excel.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Hanlin Zhao. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const quotes = [
+            "Dare to explore, strive to lead.",
+            "Logic meets creativity.",
+            "Chase growth, embrace change.",
+            "Redefining limits, unlocking potential."
+        ];
+        function changeQuote() {
+            const quoteElement = document.getElementById("dynamic-quote");
+            quoteElement.style.opacity = 0;
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                quoteElement.textContent = quotes[randomIndex];
+                quoteElement.style.opacity = 1;
+            }, 500);
+        }
+        setInterval(changeQuote, 5000);
+    </script>
+</body>
+</html>

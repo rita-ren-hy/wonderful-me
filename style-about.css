@@ -26,6 +26,7 @@
 ===================== */
 *{ box-sizing:border-box; }
 html,body{ height:100%; margin:0; }
+
 body{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
     "PingFang SC", "Hiragino Sans GB", sans-serif;
@@ -36,6 +37,8 @@ body{
     radial-gradient(900px 500px at 10% 10%, var(--bg2), transparent 45%),
     radial-gradient(900px 520px at 90% 20%, var(--bg3), transparent 45%),
     linear-gradient(180deg, var(--bg1), #f2efe6 70%);
+}
+
 /* links */
 a{ color:inherit; text-decoration:none; }
 
@@ -99,16 +102,18 @@ a{ color:inherit; text-decoration:none; }
   align-items: start;
 }
 
-/* Left photo */
+/* =====================
+   Left photo
+===================== */
 .photo-card{
-  margin-top: 50px; /* 👈 图片整体往下 */
   border-radius: var(--radius);
   overflow: hidden;
   background: rgba(255,255,255,.45);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+
   position: sticky;
-  top: 92px;
+  top: 112px; /* 👈 用 top 控制下移，比 margin-top 更稳定 */
 }
 
 .photo-card img{
@@ -119,7 +124,9 @@ a{ color:inherit; text-decoration:none; }
   transform: scale(1.01);
 }
 
-/* Right content */
+/* =====================
+   Right content
+===================== */
 .content{
   padding: 6px 0;
 }
@@ -136,24 +143,9 @@ h1{
   line-height: 1.6;
 }
 
-.chips{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 8px 0 16px;
-}
-
-.chip{
-  font-size: 12px;
-  font-weight: 700;
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.55);
-  border: 1px solid var(--border);
-  color: rgba(31,42,50,.78);
-}
-
-/* cards */
+/* =====================
+   Cards
+===================== */
 .card{
   background: var(--card);
   border: 1px solid var(--border);
@@ -178,19 +170,9 @@ h1{
   line-height: 1.7;
 }
 
-.two{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-ul{
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(31,42,50,.76);
-  line-height: 1.8;
-}
-
+/* =====================
+   Skills Pills
+===================== */
 .skills{
   display:flex;
   flex-wrap: wrap;
@@ -208,11 +190,9 @@ ul{
   color: rgba(31,42,50,.78);
 }
 
-.note{
-  background: var(--card-strong);
-}
-
-/* footer */
+/* =====================
+   Footer
+===================== */
 .site-footer{
   width: min(1100px, 100%);
   margin: 18px auto 24px;
@@ -236,8 +216,6 @@ ul{
   .photo-card img{
     height: 420px;
   }
-  .two{
-    grid-template-columns: 1fr;
-  }
 }
+
 

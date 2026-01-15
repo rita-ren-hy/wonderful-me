@@ -33,11 +33,9 @@ body{
 
   /* warm spring background (no photo) */
   background:
-    radial-gradient(900px 500px at 10% 10%, var(--bg2), transparent 60%),
-    radial-gradient(900px 520px at 90% 20%, var(--bg3), transparent 60%),
-    linear-gradient(180deg, var(--bg1), #ffffff 70%);
-}
-
+    radial-gradient(900px 500px at 10% 10%, var(--bg2), transparent 50%),
+    radial-gradient(900px 520px at 90% 20%, var(--bg3), transparent 50%),
+    linear-gradient(180deg, var(--bg1), #f2efe6 70%);
 /* links */
 a{ color:inherit; text-decoration:none; }
 
@@ -103,6 +101,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* Left photo */
 .photo-card{
+  margin-top: 18px; /* 👈 图片整体往下 */
   border-radius: var(--radius);
   overflow: hidden;
   background: rgba(255,255,255,.45);

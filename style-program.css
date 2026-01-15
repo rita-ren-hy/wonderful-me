@@ -1,98 +1,244 @@
-/* 全局样式，保持黑金主题 */
-body {
-    background-color: #000; /* 黑色背景 */
-    color: white;
-    font-family: 'Noto Sans SC', sans-serif;
-    margin: 0;
-    text-align: center;
+:root{
+  --ink: #1f2a32;
+  --muted: rgba(31, 42, 50, .62);
+  --border: rgba(31, 42, 50, .12);
+  --card-strong: rgba(255,255,255,.82);
+  --radius: 18px;
+  --shadow: 0 10px 28px rgba(0,0,0,.10);
 }
 
-/* 让 program 容器居中 */
-.program-container {
-    max-width: 1600px;
-    margin: auto;
-    padding: 80px 20px;
+/* ---- page container (doesn't touch your header styles) ---- */
+.page-wrap{
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 22px 0 36px;
+  color: var(--ink);
 }
 
-/* 标题样式，使用金色字体 */
-.section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffcc00; /* 金色 */
-    text-align: center;
-    margin-bottom: 20px;
+.page-hero{
+  padding: 10px 0 12px;
 }
 
-/* 统一时间线风格 */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    padding-left: 20px;
-    border-left: 3px solid #ffcc00; /* 金色时间线 */
+.page-title{
+  margin: 0 0 10px;
+  font-size: clamp(30px, 4vw, 52px);
+  letter-spacing: -0.03em;
 }
 
-/* 时间线卡片样式 */
-.timeline-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.1); /* 透明度调整 */
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    width: 90%;
+.page-subtitle{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
-/* 图片固定大小 */
-.timeline-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
-    border: 2px solid #ffcc00;
+.muted{ color: var(--muted); }
+
+/* ---- timeline ---- */
+.timeline{
+  display: grid;
+  gap: 22px;
+  margin-top: 18px;
 }
 
-/* 文字内容 */
-.timeline-content {
-    text-align: left;
-    color: white;
+.t-item{
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: stretch;
 }
 
-/* 鼠标悬停效果 */
-.timeline-item:hover {
-    transform: scale(1.05);
-    background: rgba(255, 204, 0, 0.2);
+.t-marker{
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-/* 修正导航栏 */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    padding: 15px 0;
-    z-index: 1000;
+.t-marker .dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(31, 42, 50, .55);
+  margin-top: 16px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,.65);
+  border: 1px solid rgba(31, 42, 50, .14);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+.t-marker .line{
+  position: absolute;
+  top: 0;
+  bottom: -22px;
+  width: 2px;
+  background: rgba(31, 42, 50, .10);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-nav ul li a {
-    color: #ffcc00;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
+.t-item:last-child .t-marker .line{
+  bottom: 18px;
 }
 
-nav ul li a:hover {
-    color: #ff6600;
+/* ---- card (like your screenshot) ---- */
+.work-card{
+  display: grid;
+  grid-template-rows: 190px 1fr;
+  background: var(--card-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
+
+.work-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(31, 42, 50, .18);
+  box-shadow: 0 16px 34px rgba(0,0,0,.12);
+}
+
+.work-cover{
+  background: rgba(0,0,0,.06);
+}
+
+.work-cover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+.work-body{
+  padding: 18px 18px 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.work-title{
+  margin: 0;
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.work-meta{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 16px;
+  color: rgba(31, 42, 50, .62);
+}
+
+.meta-item{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+}
+
+.meta-ico{ opacity: .85; }
+
+.work-teaser{
+  margin: 0;
+  color: rgba(31, 42, 50, .70);
+  line-height: 1.55;
+}
+
+.work-footer{
+  display:flex;
+  justify-content:flex-end;
+  margin-top: 6px;
+}
+
+.readmore{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  font-weight: 700;
+  color: rgba(31, 42, 50, .72);
+}
+
+.arrow{
+  font-size: 26px;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+/* ---- detail page ---- */
+.detail-head{
+  padding: 12px 0 10px;
+}
+
+.back-link{
+  display:inline-block;
+  text-decoration:none;
+  color: rgba(31,42,50,.72);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.detail-head h1{
+  margin: 0 0 8px;
+  font-size: clamp(28px, 3.5vw, 46px);
+  letter-spacing: -0.03em;
+}
+
+.detail-hero{
+  margin: 12px 0 18px;
+}
+
+.hero-img{
+  width: 100%;
+  height: min(360px, 40vh);
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display:block;
+}
+
+.detail-card{
+  background: var(--card-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+.detail-inner{
+  padding: 18px 18px 22px;
+}
+
+.detail-inner h2{
+  margin: 14px 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.detail-inner p{
+  margin: 0 0 10px;
+  line-height: 1.7;
+  color: rgba(31,42,50,.78);
+}
+
+.detail-inner ul{
+  margin: 6px 0 12px 18px;
+  color: rgba(31,42,50,.78);
+  line-height: 1.7;
+}
+
+/* ---- footer ---- */
+.page-footer{
+  padding-top: 22px;
+}
+
+.footer-text{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---- responsive ---- */
+@media (max-width: 720px){
+  .t-item{ grid-template-columns: 24px 1fr; }
+  .work-card{ grid-template-rows: 165px 1fr; }
+  .t-marker .dot{ margin-top: 12px; }
+}
+

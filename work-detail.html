@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Work Detail | Rita Ren</title>
+
+  <!-- If you already have a global stylesheet, keep it here -->
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+
+  <!-- Reuse the same CSS -->
+  <link rel="stylesheet" href="program.css" />
+</head>
+
+<body>
+  <!-- Header: your nav (kept as-is) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">HELLO</a></li>
+          <li><a class="nav-link" href="about.html">ABOUT</a></li>
+          <li><a class="nav-link active" href="program.html">WORK</a></li>
+          <li><a class="nav-link" href="projects.html">PROJECTS</a></li>
+          <li><a class="nav-link" href="life-hobbies.html">LIFE</a></li>
+          <li><a class="nav-link" href="resume.html">RESUME</a></li>
+          <li><a class="nav-link" href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="detail-head">
+      <a class="back-link" href="program.html">‹ Back to Work</a>
+      <h1 id="dTitle">Loading…</h1>
+      <p class="muted" id="dMeta"></p>
+    </section>
+
+    <section class="detail-hero" id="dHero"></section>
+
+    <section class="detail-card" id="dContent"></section>
+
+    <footer class="page-footer">
+      <p class="footer-text">© <span id="year"></span> Rita Ren</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // NOTE: Content is written ONLY based on the resume facts, expanded with learnings,
+    // without inventing extra projects/metrics.
+    const data = {
+      "ecom-intern": {
+        title: "E-commerce Operating Intern — Hongzhimei",
+        meta: "Nanjing · Jun 2024 – Aug 2024 · Market Research / Pricing / Conversion",
+        hero: "assets/work/ecom.jpg",
+        content: `
+          <h2>Context</h2>
+          <p>
+            Joined an early-stage feminine hygiene and personal care brand operating on Taobao and Douyin.
+            The work was centered on making product and growth decisions with clearer evidence, not guesswork.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              <strong>Market & competitor teardown:</strong>
+              Benchmarked top brands/SKUs across major e-commerce platforms, breaking down value propositions,
+              PDP structure, and bundle design to identify what could be replicated and where differentiation made sense.
+            </li>
+            <li>
+              <strong>Customer & pricing insights:</strong>
+              Used user survey data to segment customers by usage scenarios, price sensitivity, and purchase drivers,
+              supporting a mid-to-low pricing direction and a core-customer focus aligned with the brand’s plant-based positioning.
+            </li>
+            <li>
+              <strong>Growth & conversion support:</strong>
+              Synthesized industry trends and social media content performance to propose content-led and review-driven
+              influencer strategies, contributing to ~15% improvement in conversion and customer satisfaction (as reported internally).
+            </li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <ul>
+            <li>
+              How to turn a fuzzy business question (“what should we emphasize?”) into a repeatable workflow:
+              competitor structure → customer segmentation → positioning & pricing → content execution.
+            </li>
+            <li>
+              That analysis only creates value when it is packaged into actions:
+              clear options, trade-offs, and recommendations that a team can execute quickly.
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Excel · Desk research · Survey analysis · E-commerce platform observation</p>
+        `
+      },
+
+      "accounting-intern": {
+        title: "Accounting Intern — Guotai Junan Securities",
+        meta: "Nanjing · May 2023 – Jul 2023 · Financial Analysis / Benchmarking / Compliance",
+        hero: "assets/work/accounting.jpg",
+        content: `
+          <h2>Context</h2>
+          <p>
+            Worked within the accounting function supporting financial data management and internal analysis,
+            helping improve comparability across subsidiaries and strengthening audit readiness.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              <strong>Financial analysis & benchmarking:</strong>
+              Analyzed internal financial data and supported cross-subsidiary comparisons on costs, expenses,
+              and operating metrics to identify material variances and potential risk areas.
+            </li>
+            <li>
+              <strong>Decision support through standardization:</strong>
+              Assisted in building a more consistent reporting framework and analytical methodology so results were
+              comparable across teams and time periods.
+            </li>
+            <li>
+              <strong>Data & compliance support:</strong>
+              Maintained accounting records using Excel and financial systems, helping organize vouchers/archives and
+              supporting centralized data management for better traceability and audit compliance.
+            </li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <ul>
+            <li>
+              Why “one source of truth” matters: when definitions and reporting logic are standardized,
+              benchmarking becomes more reliable and variance analysis becomes actionable.
+            </li>
+            <li>
+              How to communicate finance insights in a decision-friendly way:
+              not only what changed, but what to look at next (drivers, structure vs. one-off, potential risk signals).
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Excel · Financial systems · Standardized reporting templates</p>
+        `
+      }
+    };
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const d = data[id];
+
+    const titleEl = document.getElementById("dTitle");
+    const metaEl  = document.getElementById("dMeta");
+    const heroEl  = document.getElementById("dHero");
+    const contEl  = document.getElementById("dContent");
+
+    if (!d) {
+      titleEl.textContent = "Not Found";
+      metaEl.textContent = "This work item doesn’t exist.";
+      heroEl.innerHTML = "";
+      contEl.innerHTML = `
+        <div class="detail-inner">
+          <p class="muted">Go back and open another item from the Work page.</p>
+        </div>
+      `;
+    } else {
+      titleEl.textContent = d.title;
+      metaEl.textContent = d.meta;
+      heroEl.innerHTML = `<img class="hero-img" src="${d.hero}" alt="">`;
+      contEl.innerHTML = `<div class="detail-inner">${d.content}</div>`;
+    }
+  </script>
+</body>
+</html>

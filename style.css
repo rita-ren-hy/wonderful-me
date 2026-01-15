@@ -130,19 +130,16 @@ a {
    Subtitle (Hi 那一行)
 ===================== */
 .hero-subtitle {
-  margin: 0 auto 0;
+  margin: 0 auto 22px;
   max-width: 680px;
   font-size: 18px;
   line-height: 1.75;
 
-  /* ✅ 字体本身加深 */
-  color: #f2f2f2;
+  color: #f2f2f2; /* ← 改这里 */
 
-  /* ✅ 阴影改成“暗描边”，不是白雾 */
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.28),
-    0 0 1px rgba(0, 0, 0, 0.18);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35); /* 顺便增强对比 */
 }
+
 /* =====================
    Intro / Dynamic Quote
 ===================== */

@@ -10,9 +10,9 @@
 </head>
 
 <body>
-  <!-- Header (只保留导航；去掉 logo + 名字) -->
+  <!-- Header：只保留导航 -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <nav class="site-nav">
         <ul class="nav-list">
           <li><a class="nav-link active" href="index.html">HELLO</a></li>
@@ -28,45 +28,47 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="container hero-inner">
+      <div class="hero-inner">
         <h1 class="hero-title">HAOYUN REN</h1>
 
         <p class="hero-subtitle">
           Hi 👋 I turn curiosity into action through analytics and structured thinking.
         </p>
 
+        <!-- ✅ 按你要求：去掉两个按钮，所以这里为空（不占位，不上移其他内容） -->
+        <!-- <div class="hero-actions"></div> -->
+
         <!-- Intro / Dynamic Quote -->
-        <div class="intro">
+        <section class="intro">
           <p class="tagline">Analyst | Designer | Storyteller | Explorer</p>
 
           <p id="dynamic-quote" class="dynamic-quote" aria-live="polite">
-            <span class="zh">从好奇开始，走向行动。</span>
-            <span class="en">Where curiosity turns into action.</span>
+            <span class="zh active">从好奇开始，走向行动。</span>
+            <span class="en active">Where curiosity turns into action.</span>
           </p>
-        </div>
+        </section>
       </div>
     </section>
 
-    <!-- Projects 占位 -->
-    <section id="projects" class="spacer"></section>
-
-    <!-- Contact section（必须有，不然导航 #contact 没用） -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:haoyunren219@gmail.com">haoyunren219@gmail.com</a></p>
+      <div class="contact-inner">
+        <h2 class="contact-title">Contact</h2>
+        <p class="contact-text">
+          Email:
+          <a class="contact-link" href="mailto:haoyunren219@gmail.com">haoyunren219@gmail.com</a>
+        </p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      © 2026 Haoyun Ren. All rights reserved.
-    </div>
+    <div class="footer-inner">© 2026 Haoyun Ren. All rights reserved.</div>
   </footer>
 </body>
 </html>
+
 
 
 

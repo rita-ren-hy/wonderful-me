@@ -2,16 +2,13 @@
    Base / Variables
 ===================== */
 :root {
-  --bg: #0b0b0f;
-  --card: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.12);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.70);
-  --soft: rgba(255, 255, 255, 0.08);
-  --accent: rgba(116, 86, 255, 0.55);
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  --radius: 18px;
+  --card: rgba(255, 255, 255, 0.75);
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #2b2b2b;
+  --muted: #555;
+  --soft: rgba(255, 255, 255, 0.6);
 }
+
 
 *,
 *::before,

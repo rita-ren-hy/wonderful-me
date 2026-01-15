@@ -2,16 +2,8 @@
    Base / Variables
 ===================== */
 :root {
-  /* 🌱 春日暖色主题 */
   --text: #2b2b2b;
-  --muted: #6b6b6b;
-
-  /* ❌ 彻底移除卡片体系 */
-  --card: transparent;
-  --soft: transparent;
-  --border: transparent;
-
-  /* ✨ 强调色 */
+  --muted: rgba(0, 0, 0, 0.6);
   --accent: #f2b705;
 }
 
@@ -27,18 +19,22 @@ body {
 }
 
 body {
-  background:
-    linear-gradient(
-      rgba(255, 245, 225, 0.55),
-      rgba(255, 230, 200, 0.55)
-    ),
-    url("background.jpg") center / cover no-repeat fixed;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
+
+  /* 🌸 背景：更清晰的照片 + 柔和渐变 */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 245, 225, 0.35),
+      rgba(255, 235, 210, 0.45),
+      rgba(255, 245, 225, 0.25)
+    ),
+    url("background.jpg") center / cover no-repeat fixed;
 }
 
 /* =====================
-   Layout helpers
+   Layout
 ===================== */
 .container {
   width: min(1100px, calc(100% - 40px));
@@ -46,20 +42,19 @@ body {
 }
 
 /* =====================
-   Header / Navigation
+   Header / Nav
 ===================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   background: transparent;
-  backdrop-filter: none;
 }
 
 .header-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 14px 0;
 }
 
@@ -70,14 +65,13 @@ body {
 }
 
 .brand-logo {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
 }
 
 .brand-text {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .nav-list {
@@ -91,17 +85,18 @@ body {
 .nav-link {
   padding: 8px 14px;
   border-radius: 14px;
-  color: var(--muted);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
   transition: all 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--text);
+  color: #000;
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* JS scroll 状态保持透明 */
+/* JS scroll 状态也保持透明 */
 nav.scrolled {
   background: transparent !important;
   box-shadow: none !important;
@@ -114,22 +109,22 @@ nav.scrolled {
   min-height: 72vh;
   display: flex;
   align-items: center;
-  padding: 70px 0 40px;
+  padding: 80px 0 40px;
 }
 
 .hero-inner {
-  max-width: 700px;
+  max-width: 640px;
 }
 
-/* 🌟 高级：文字可读性（隐形渐变遮罩） */
+/* ⭐ 文字区域局部渐变遮罩（高级感来源） */
 .hero-inner::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -20px;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.65),
-    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.25),
     rgba(255, 255, 255, 0)
   );
   z-index: -1;
@@ -137,33 +132,37 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-size: clamp(44px, 6vw, 68px);
-  font-weight: 700;
-  letter-spacing: 1px;
   margin: 0;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  font-size: clamp(42px, 5.5vw, 64px);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .hero-subtitle {
-  margin-top: 12px;
-  line-height: 1.6;
-  color: var(--muted);
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+  max-width: 520px;
 }
 
 /* =====================
    Buttons
 ===================== */
 .hero-actions {
+  margin-top: 20px;
   display: flex;
   gap: 14px;
-  margin-top: 18px;
 }
 
 .btn {
   padding: 10px 18px;
   border-radius: 16px;
   border: none;
-  background: rgba(255, 255, 255, 0.35);
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(6px);
   transition: transform 0.15s ease;
 }
@@ -173,14 +172,15 @@ nav.scrolled {
 }
 
 /* =====================
-   Intro / Dynamic quote
+   Intro / Slogan
 ===================== */
 .intro {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .tagline {
-  color: var(--muted);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 .dynamic-quote {
@@ -188,24 +188,22 @@ nav.scrolled {
 }
 
 .dynamic-quote .zh {
-  font-size: 20px;
-  font-weight: 700;
-  display: block;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .dynamic-quote .en {
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  display: block;
 }
 
 /* =====================
-   Highlights (无卡片)
+   Highlights（无卡片）
 ===================== */
 .highlights {
-  padding: 60px 0;
+  padding: 70px 0 40px;
 }
 
 .grid-3 {
@@ -219,22 +217,27 @@ nav.scrolled {
 }
 
 .card-title {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 6px;
 }
 
 .card-text {
-  color: var(--muted);
+  font-size: 14px;
   line-height: 1.6;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 /* =====================
-   Footer
+   Footer（干净结束）
 ===================== */
 .site-footer {
   background: transparent;
-  padding: 24px 0;
-  color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 13px;
 }
 
 /* =====================
@@ -249,4 +252,3 @@ nav.scrolled {
     flex-wrap: wrap;
   }
 }
-

@@ -24,8 +24,8 @@ body {
 body {
   background:
     linear-gradient(
-      rgba(255, 248, 235, 0.88),
-      rgba(255, 235, 210, 0.88)
+  rgba(255, 245, 225, 0.65),
+  rgba(255, 230, 200, 0.65)
     ),
     url("background.jpg") center / cover no-repeat fixed;
 }
@@ -59,7 +59,9 @@ a.link {
   background: rgba(10, 10, 14, 0.6);
   border-bottom: 1px solid var(--border);
 }
-
+.hero-title {
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
 .header-inner {
   display: flex;
   align-items: center;
@@ -79,9 +81,12 @@ a.link {
   height: 40px;
   object-fit: contain;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
   padding: 6px;
+
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
+
 .brand-text {
   font-weight: 700;
   letter-spacing: 0.4px;
@@ -221,7 +226,7 @@ nav.scrolled {
   display: block;
   margin-top: 6px;
   font-size: 15px;
-  color: #666; /* 关键：别再用白色 */
+  color: #555;   /* 关键：不要再用白色 */
 }
 /* =====================
    Highlights / Cards

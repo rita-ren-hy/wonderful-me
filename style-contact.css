@@ -1,24 +1,22 @@
 /* =====================
-   Spring Warm Theme — Contact
-   (保持你之前的变量命名)
+   Contact — Background Image Version
 ===================== */
 :root{
   --ink: #1f2a32;
   --ink-soft: rgba(31, 42, 50, .78);
   --muted: rgba(31, 42, 50, .62);
 
-  --bg1: #fff6df;   /* creamy yellow */
-  --bg2: #ffe9ee;   /* soft pink */
-  --bg3: #e9fff1;   /* mint */
-
-  --card: rgba(255,255,255,.62);
-  --card-strong: rgba(255,255,255,.72);
-  --border: rgba(31, 42, 50, .12);
+  --card: rgba(255,255,255,.72);
+  --card-strong: rgba(255,255,255,.82);
+  --border: rgba(31, 42, 50, .14);
 
   --radius: 18px;
-  --shadow: 0 10px 28px rgba(0,0,0,.08);
+  --shadow: 0 10px 28px rgba(0,0,0,.10);
 
-  --pad: 28px;
+  /* ✅ 背景图设置：改这里就行 */
+  --bg-img: url("assets/img/contact-bg.jpg");
+  --bg-dim: .18;     /* 0~0.4：越大越“压暗” */
+  --bg-blur: 0px;    /* 想要朦胧感就改成 6px/10px */
 }
 
 /* =====================
@@ -26,14 +24,36 @@
 ===================== */
 *{ box-sizing:border-box; }
 html,body{ height:100%; margin:0; }
+
 body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
   color: var(--ink);
-  background:
-    radial-gradient(1200px 600px at 10% 10%, var(--bg2), transparent 55%),
-    radial-gradient(900px 600px at 90% 20%, var(--bg3), transparent 55%),
-    radial-gradient(900px 700px at 50% 95%, var(--bg1), transparent 60%),
-    #fff;
+  background: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ✅ 背景图层 */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(var(--bg-blur));
+  transform: scale(1.05); /* 防止 blur 后边缘露白 */
+  z-index: -2;
+}
+
+/* ✅ 背景遮罩：让文字/卡片更清晰 */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,var(--bg-dim));
+  z-index: -1;
 }
 
 /* 页面整体留出 fixed nav 的空间 */
@@ -43,9 +63,7 @@ body{
 
 /* =====================
    Fixed Capsule Nav
-   你已有 nav 样式的话，这里只做最少的布局兜底
 ===================== */
-
 .site-header{
   position: fixed;
   top: 0;
@@ -61,10 +79,11 @@ body{
   gap: 14px;
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,.55);
+
+  background: rgba(255,255,255,.72);
   border: 1px solid var(--border);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
 }
 
 .nav-link{
@@ -84,7 +103,7 @@ body{
 
 .nav-link.active{
   color: var(--ink);
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.92);
   border: 1px solid rgba(31, 42, 50, .10);
 }
 
@@ -101,9 +120,7 @@ body{
   display: grid;
   grid-template-columns: 1.05fr .95fr;
   gap: 28px;
-
-  /* ✅ 关键：不要垂直居中，否则右侧容易“掉下去” */
-  align-items: start;
+  align-items: start; /* ✅ 保证右边不下沉 */
 }
 
 .hero-copy .eyebrow{
@@ -135,6 +152,9 @@ body{
   margin-top: 10px;
 }
 
+/* =====================
+   Cards
+===================== */
 .card{
   display: block;
   text-decoration: none;
@@ -143,6 +163,7 @@ body{
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
   transition: transform .15s ease, background .15s ease;
 }
 
@@ -173,38 +194,34 @@ body{
 }
 
 /* =====================
-   Portrait (cut-out look)
+   Portrait
 ===================== */
 .hero-portrait{
   display: flex;
-
-  /* ✅ 关键：让右侧内容贴右，而不是居中 */
-  justify-content: flex-end;
+  justify-content: flex-end; /* ✅ 贴右 */
 }
 
-/* ✅ 把 aspect-ratio 换成固定高度：更稳定，图片加载失败也不会撑得很怪 */
 .portrait-stage{
   position: relative;
   width: min(420px, 100%);
   height: 560px;
-
   border-radius: calc(var(--radius) + 10px);
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.60);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
   overflow: hidden;
-
   display: grid;
   place-items: end center;
   padding: 18px;
 }
 
-/* 柔和色块，制造“ins 风”背景 */
+/* 可选：如果你还想保留两个柔和色块当装饰，就留着；不想要可以删掉 blob 相关 */
 .blob{
   position: absolute;
   inset: auto;
-  filter: blur(14px);
-  opacity: .85;
+  filter: blur(16px);
+  opacity: .55;
   border-radius: 999px;
 }
 
@@ -213,7 +230,7 @@ body{
   height: 240px;
   left: -40px;
   top: 30px;
-  background: radial-gradient(circle at 30% 30%, var(--bg2), transparent 60%);
+  background: radial-gradient(circle at 30% 30%, rgba(255,200,215,.9), transparent 60%);
 }
 
 .blob-2{
@@ -221,10 +238,9 @@ body{
   height: 280px;
   right: -60px;
   bottom: -30px;
-  background: radial-gradient(circle at 30% 30%, var(--bg3), transparent 60%);
+  background: radial-gradient(circle at 30% 30%, rgba(200,255,220,.9), transparent 60%);
 }
 
-/* 这里就是关键：透明 PNG + drop-shadow */
 .portrait-img{
   position: relative;
   width: 92%;
@@ -246,9 +262,10 @@ body{
 .panel{
   padding: 18px 18px 16px;
   border-radius: calc(var(--radius) + 6px);
-  background: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.68);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
 
 .panel h2{
@@ -291,7 +308,7 @@ input, textarea{
   width: 100%;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.80);
   padding: 12px 12px;
   font-size: 14px;
   color: var(--ink);
@@ -301,7 +318,7 @@ input, textarea{
 
 input:focus, textarea:focus{
   border-color: rgba(31,42,50,.26);
-  background: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.92);
 }
 
 .form-actions{
@@ -313,7 +330,7 @@ input:focus, textarea:focus{
 
 .btn{
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.92);
   border-radius: 999px;
   padding: 10px 14px;
   font-weight: 700;
@@ -324,7 +341,7 @@ input:focus, textarea:focus{
 
 .btn:hover{
   transform: translateY(-1px);
-  background: rgba(255,255,255,.98);
+  background: rgba(255,255,255,1);
 }
 
 .hint{
@@ -349,11 +366,9 @@ input:focus, textarea:focus{
   .hero-grid{
     grid-template-columns: 1fr;
   }
-
   .hero-portrait{
     justify-content: center;
   }
-
   .portrait-stage{
     width: min(460px, 100%);
     height: 560px;

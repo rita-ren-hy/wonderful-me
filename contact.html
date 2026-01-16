@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="style-contact.css" />
 </head>
-<script src="contact.js"></script>
+
 <body>
   <header class="site-header">
     <nav class="site-nav">
@@ -17,7 +17,7 @@
       <a class="nav-link" href="projects.html">PROJECTS</a>
       <a class="nav-link" href="life-hobbies.html">LIFE</a>
       <a class="nav-link" href="resume.html">RESUME</a>
-      <a class="nav-link active" href="index.html#contact">CONTACT</a>
+      <a class="nav-link active" href="contact.html">CONTACT</a>
     </nav>
   </header>
 
@@ -25,7 +25,6 @@
     <section class="contact-hero">
       <div class="hero-grid">
 
-        <!-- Left -->
         <div class="hero-copy">
           <p class="eyebrow">Contact</p>
           <h1>Let’s connect.</h1>
@@ -33,34 +32,38 @@
             If you’d like to chat about analytics, projects, or opportunities,
             feel free to reach out—email is the fastest way.
           </p>
-        <div class="contact-cards">
-  <!-- Email -->
-  <a class="card" href="mailto:haoyunren219@gmail.com">
-    <div class="card-title">Email</div>
-    <div class="card-value">haoyunren219@gmail.com</div>
-  </a>
 
-  <!-- LinkedIn -->
-  <a
-    class="card"
-    href="https://www.linkedin.com/in/haoyun-ren-rita"
-    target="_blank"
-    rel="noopener"
-  >
-    <div class="card-title">LinkedIn</div>
-    <div class="card-value">linkedin.com/in/haoyun-ren-rita</div>
-  </a>
+          <div class="contact-cards">
+            <!-- Email -->
+            <a class="card" href="mailto:haoyunren219@gmail.com">
+              <div class="card-title">Email</div>
+              <div class="card-value">haoyunren219@gmail.com</div>
+            </a>
 
-  <!-- WeChat -->
-  <div class="card wechat-card" data-wechat="RRitaa__">
-  <div class="card-title">WeChat</div>
-  <div class="card-value">
-    RRitaa__
-    <span class="copy-hint">Click to copy</span>
-  </div>
-</div>
+            <!-- LinkedIn -->
+            <a
+              class="card"
+              href="https://www.linkedin.com/in/haoyun-ren-rita"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card-title">LinkedIn</div>
+              <div class="card-value">linkedin.com/in/haoyun-ren-rita</div>
+            </a>
 
-      </div>
+            <!-- WeChat (click to copy) -->
+            <div class="card wechat-card" data-wechat="RRitaa__">
+              <div class="card-title">WeChat</div>
+              <div class="card-value">
+                RRitaa__
+                <span class="copy-hint">Click to copy</span>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- ✅ end hero-copy -->
+
+      </div> <!-- ✅ end hero-grid -->
     </section>
 
     <footer class="site-footer">
@@ -68,10 +71,10 @@
     </footer>
   </main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <!-- ✅ JS 放在 body 最后，保证元素都存在 -->
+  <script src="contact.js"></script>
 </body>
 </html>
+
 
 

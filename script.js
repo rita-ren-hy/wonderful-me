@@ -53,31 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-  // year
-  document.getElementById("y").textContent = new Date().getFullYear();
-
-  // WeChat copy
-  const wechatCard = document.querySelector(".wechat-card");
-
-  if (wechatCard) {
-    wechatCard.addEventListener("click", () => {
-      const wechatId = wechatCard.dataset.wechat;
-
-      navigator.clipboard.writeText(wechatId).then(() => {
-        wechatCard.classList.add("copied");
-        const hint = wechatCard.querySelector(".copy-hint");
-        const originalText = hint.textContent;
-
-        hint.textContent = "Copied ✓";
-
-        setTimeout(() => {
-          hint.textContent = originalText;
-          wechatCard.classList.remove("copied");
-        }, 1500);
-      });
-    });
-  }
-
 
 
 

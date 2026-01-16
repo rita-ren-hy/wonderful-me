@@ -89,15 +89,21 @@ img{ max-width:100%; display:block; }
 main{
   width: min(var(--maxW), calc(100% - 28px));
   margin: 0 auto;
-  padding: calc(var(--navH) + 44px) 0 72px;
+
+  /* 原来 +44px 太多了，收紧让 Life 往上 */
+  padding: calc(var(--navH) + 22px) 0 72px;
 }
+
 .header{
   display:flex;
-  gap: 18px;
+  gap: 14px;
   align-items:flex-end;
   justify-content: space-between;
-  margin-bottom: 18px;
+
+  /* 标题和星图之间距离更小 */
+  margin-bottom: 10px;
 }
+
 .title{
   margin:0;
   font-size: clamp(26px, 4vw, 40px);
@@ -122,10 +128,11 @@ main{
   background: rgba(255,255,255,.46);
   box-shadow: var(--shadow);
   overflow: hidden;
-  min-height: 640px;
-  height: min(76vh, 820px);
 
-  /* parallax vars written by JS */
+  /* 让照片区域更大、更“沉浸” */
+  min-height: 740px;
+  height: min(82vh, 940px);
+
   --px: 0px;
   --py: 0px;
 }

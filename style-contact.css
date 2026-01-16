@@ -45,70 +45,47 @@ body{
    Fixed Capsule Nav
    你已有 nav 样式的话，这里只做最少的布局兜底
 ===================== */
+
 .site-header{
   position: fixed;
-  top: 14px;
-  left: 0;
-  right: 0;
+  top: 0;
+  width: 100%;
   z-index: 50;
-  display: flex;
-  justify-content: center;
-  pointer-events: none; /* 让 nav 外区域不挡点击 */
+  padding: 14px 18px;
 }
 
-.capsule-nav{
-  pointer-events: auto;
-  width: min(1100px, calc(100% - 28px));
+.site-nav{
+  margin-left: auto;
+  width: fit-content;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 14px;
-
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.70);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-}
-
-.capsule-nav .brand{
-  text-decoration: none;
-  color: var(--ink);
-  font-weight: 700;
-  letter-spacing: .2px;
   padding: 8px 10px;
   border-radius: 999px;
-}
-
-.capsule-nav .nav-links{
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.capsule-nav .nav-links a{
-  text-decoration: none;
-  color: var(--ink-soft);
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-}
-
-.capsule-nav .nav-links a:hover{
   background: rgba(255,255,255,.55);
-  border-color: var(--border);
-  transform: translateY(-1px);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
-.capsule-nav .nav-links a.active{
+.nav-link{
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: rgba(31, 42, 50, .72);
+}
+
+.nav-link:hover{
   color: var(--ink);
-  background: rgba(255,255,255,.85);
-  border-color: var(--border);
+  background: rgba(255,255,255,.55);
 }
 
+.nav-link.active{
+  color: var(--ink);
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(31, 42, 50, .10);
+}
 /* =====================
    Contact Hero
 ===================== */

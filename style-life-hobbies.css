@@ -295,6 +295,9 @@ main{
   opacity: .95;
   transform: translateY(0px);
 }
+.node.bring-front{ z-index: 6; }
+.node.bring-front:hover{ z-index: 12; }
+
 
 /* =====================
    Responsive

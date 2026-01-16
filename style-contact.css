@@ -43,7 +43,7 @@ body::before{
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(var(--bg-blur));
-  transform: scale(1.05); /* 防止 blur 后边缘露白 */
+  transform: scale(1.05);
   z-index: -2;
 }
 
@@ -64,8 +64,6 @@ body::after{
 /* =====================
    Fixed Capsule Nav
 ===================== */
-
-
 .site-header{
   position: fixed;
   top: 0;
@@ -94,6 +92,7 @@ body::after{
   padding: 7px 12px;
   border-radius: 999px;
   color: rgba(31, 42, 50, .72);
+  text-decoration: none; /* ✅ 去掉下划线 */
 }
 
 .nav-link:hover{
@@ -116,6 +115,25 @@ body::after{
   padding: 24px 0 10px;
 }
 
+/* ✅ 单列布局（右边照片块已移除） */
+.hero-grid{
+  display: block;
+}
+
+/* ✅ 左侧内容：右移 + 限宽，避免挡住背景里的脸 */
+.hero-copy{
+  max-width: 640px;
+  margin-left: clamp(260px, 34vw, 520px);
+  margin-top: 22px;
+
+  background: rgba(255,255,255,.60);
+  border: 1px solid rgba(31,42,50,.12);
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+  backdrop-filter: blur(10px);
+
+  padding: 22px 22px 18px;
+}
 
 .hero-copy .eyebrow{
   margin: 0 0 10px;
@@ -145,48 +163,6 @@ body::after{
   gap: 12px;
   margin-top: 10px;
 }
-/* =====================
-   Contact Layout Update
-   - remove right portrait block
-   - move left content to the right
-===================== */
-
-/* 单列布局 */
-.hero-grid{
-  display: block;
-}
-
-/* 左侧内容：右移 + 限宽，避免挡住脸 */
-.hero-copy{
-  max-width: 640px;               /* 控制内容宽度 */
-  margin-left: clamp(260px, 34vw, 520px);
-  margin-top: 22px;
-
-  /* 磨砂底：提升文字可读性 */
-  background: rgba(255,255,255,.60);
-  border: 1px solid rgba(31,42,50,.12);
-  border-radius: 22px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.10);
-  backdrop-filter: blur(10px);
-
-  padding: 22px 22px 18px;
-}
-
-/* 小屏：自动回到居中，避免被挤出去 */
-@media (max-width: 900px){
-  .hero-copy{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 640px){
-  .hero-copy{
-    padding: 18px 16px 14px;
-  }
-}
-
 
 /* =====================
    Cards
@@ -223,174 +199,12 @@ body::after{
   word-break: break-word;
 }
 
-.note{
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* =====================
-   Portrait
-===================== */
-.hero-portrait{
-  display: flex;
-  justify-content: flex-end; /* ✅ 贴右 */
-}
-
-.portrait-stage{
-  position: relative;
-  width: min(420px, 100%);
-  height: 560px;
-  border-radius: calc(var(--radius) + 10px);
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.60);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  display: grid;
-  place-items: end center;
-  padding: 18px;
-}
-
-/* 可选：如果你还想保留两个柔和色块当装饰，就留着；不想要可以删掉 blob 相关 */
-.blob{
-  position: absolute;
-  inset: auto;
-  filter: blur(16px);
-  opacity: .55;
-  border-radius: 999px;
-}
-
-.blob-1{
-  width: 240px;
-  height: 240px;
-  left: -40px;
-  top: 30px;
-  background: radial-gradient(circle at 30% 30%, rgba(255,200,215,.9), transparent 60%);
-}
-
-.blob-2{
-  width: 280px;
-  height: 280px;
-  right: -60px;
-  bottom: -30px;
-  background: radial-gradient(circle at 30% 30%, rgba(200,255,220,.9), transparent 60%);
-}
-
-.portrait-img{
-  position: relative;
-  width: 92%;
-  max-height: 100%;
-  object-fit: contain;
-  transform: translateY(6px);
-  filter: drop-shadow(0 16px 26px rgba(0,0,0,.18));
-}
-
-/* =====================
-   Contact Panel / Form
-===================== */
-.contact-panel{
-  width: min(1100px, calc(100% - 28px));
-  margin: 22px auto 0;
-  padding-bottom: 44px;
-}
-
-.panel{
-  padding: 18px 18px 16px;
-  border-radius: calc(var(--radius) + 6px);
-  background: rgba(255,255,255,.68);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-}
-
-.panel h2{
-  margin: 0 0 6px;
-  font-size: 20px;
-}
-
-.panel-sub{
-  margin: 0 0 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: 13px;
-}
-
-.form{
-  display: grid;
-  gap: 14px;
-}
-
-.row{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-label{
-  display: grid;
-  gap: 8px;
-}
-
-label span{
-  font-size: 12px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 650;
-}
-
-input, textarea{
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.80);
-  padding: 12px 12px;
-  font-size: 14px;
-  color: var(--ink);
-  outline: none;
-  transition: border-color .15s ease, transform .15s ease, background .15s ease;
-}
-
-input:focus, textarea:focus{
-  border-color: rgba(31,42,50,.26);
-  background: rgba(255,255,255,.92);
-}
-
-.form-actions{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.btn{
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.92);
-  border-radius: 999px;
-  padding: 10px 14px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform .15s ease, background .15s ease;
-}
-
-.btn:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,1);
-}
-
-.hint{
-  color: var(--muted);
-  font-size: 13px;
-}
-
 /* =====================
    Footer
 ===================== */
 .site-footer{
   width: min(1100px, calc(100% - 28px));
-  margin: 0 auto 26px;
+  margin: 40px auto 26px;
   color: var(--muted);
   text-align: center;
 }
@@ -399,20 +213,18 @@ input:focus, textarea:focus{
    Responsive
 ===================== */
 @media (max-width: 900px){
-  .hero-grid{
-    grid-template-columns: 1fr;
-  }
-  .hero-portrait{
-    justify-content: center;
-  }
-  .portrait-stage{
-    width: min(460px, 100%);
-    height: 560px;
+  .hero-copy{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
   }
 }
 
 @media (max-width: 640px){
-  .row{ grid-template-columns: 1fr; }
   .page{ padding-top: 98px; }
+  .hero-copy{
+    padding: 18px 16px 14px;
+  }
 }
+
 

@@ -75,7 +75,6 @@ body{
   border-radius: 999px;
   color: rgba(31, 42, 50, .72);
   text-decoration: none;
-
 }
 
 .nav-link:hover{
@@ -88,6 +87,7 @@ body{
   background: rgba(255,255,255,.78);
   border: 1px solid rgba(31, 42, 50, .10);
 }
+
 /* =====================
    Contact Hero
 ===================== */
@@ -101,7 +101,9 @@ body{
   display: grid;
   grid-template-columns: 1.05fr .95fr;
   gap: 28px;
-  align-items: center;
+
+  /* ✅ 关键：不要垂直居中，否则右侧容易“掉下去” */
+  align-items: start;
 }
 
 .hero-copy .eyebrow{
@@ -175,18 +177,23 @@ body{
 ===================== */
 .hero-portrait{
   display: flex;
-  justify-content: center;
+
+  /* ✅ 关键：让右侧内容贴右，而不是居中 */
+  justify-content: flex-end;
 }
 
+/* ✅ 把 aspect-ratio 换成固定高度：更稳定，图片加载失败也不会撑得很怪 */
 .portrait-stage{
   position: relative;
   width: min(420px, 100%);
-  aspect-ratio: 4 / 5;
+  height: 560px;
+
   border-radius: calc(var(--radius) + 10px);
   border: 1px solid var(--border);
   background: rgba(255,255,255,.45);
   box-shadow: var(--shadow);
   overflow: hidden;
+
   display: grid;
   place-items: end center;
   padding: 18px;
@@ -342,8 +349,14 @@ input:focus, textarea:focus{
   .hero-grid{
     grid-template-columns: 1fr;
   }
+
+  .hero-portrait{
+    justify-content: center;
+  }
+
   .portrait-stage{
     width: min(460px, 100%);
+    height: 560px;
   }
 }
 

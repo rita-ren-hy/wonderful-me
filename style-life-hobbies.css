@@ -265,7 +265,9 @@ main{
     scale(1.03);
   z-index: 5;
 }
-
+.node.portrait{
+  aspect-ratio: 3 / 4;
+}
 /* caption chip */
 .chip{
   position:absolute;

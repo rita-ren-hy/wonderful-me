@@ -64,6 +64,8 @@ body::after{
 /* =====================
    Fixed Capsule Nav
 ===================== */
+
+
 .site-header{
   position: fixed;
   top: 0;
@@ -79,11 +81,10 @@ body::after{
   gap: 14px;
   padding: 8px 10px;
   border-radius: 999px;
-
-  background: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.55);
   border: 1px solid var(--border);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
 .nav-link{
@@ -93,7 +94,6 @@ body::after{
   padding: 7px 12px;
   border-radius: 999px;
   color: rgba(31, 42, 50, .72);
-  text-decoration: none;
 }
 
 .nav-link:hover{
@@ -103,7 +103,7 @@ body::after{
 
 .nav-link.active{
   color: var(--ink);
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.78);
   border: 1px solid rgba(31, 42, 50, .10);
 }
 

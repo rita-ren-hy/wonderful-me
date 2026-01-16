@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style-life-hobbies.css" />
 </head>
 
-  <body>
+<body>
   <!-- Top Nav -->
   <header class="site-header">
     <nav class="site-nav">
@@ -20,8 +20,7 @@
       <a class="nav-link" href="resume.html">RESUME</a>
       <a class="nav-link" href="index.html#contact">CONTACT</a>
     </nav>
-  </div>
-</div>
+  </header>
 
   <main>
     <header class="header">
@@ -36,97 +35,181 @@
     <section class="stage" id="constellation" aria-label="Memory Constellation">
       <div class="stars"></div>
 
-      <div class="center-note" aria-hidden="true">
-        <strong>Memory Constellation</strong>
-        <span>Hover to reveal a tiny caption. Replace images with your own moments.</span>
-      </div>
-
-      <!-- ✅ 16 photos: replace src + caption as you like -->
-      <figure class="node" style="--x:14;--y:24;--w:220px;--z:1.18;--r:-5;--delay:1.2;">
-        <img src="life-01.jpg" alt="Life photo 01" />
+      <!-- ✅ 16 photos: now clickable + each has its own memory -->
+      <figure class="node is-clickable"
+        style="--x:14;--y:24;--w:220px;--z:1.18;--r:-5;--delay:1.2;"
+        data-title="Dance — staying present"
+        data-date="2024.10"
+        data-memory="Write your memory here. Keep it short — 1 to 3 sentences is perfect.">
+        <img src="life-01.jpg" alt="Dance moment" />
         <figcaption class="chip">Dance — staying present</figcaption>
       </figure>
 
-      <figure class="node" style="--x:30;--y:18;--w:160px;--z:0.90;--r:4;--delay:2.4;">
-        <img src="life-02.jpg" alt="Life photo 02" />
+      <figure class="node is-clickable"
+        style="--x:30;--y:18;--w:160px;--z:0.90;--r:4;--delay:2.4;"
+        data-title="Handmade — patience"
+        data-date="2024.11"
+        data-memory="Write your memory here.">
+        <img src="life-02.jpg" alt="Handmade detail" />
         <figcaption class="chip">Handmade — patience</figcaption>
       </figure>
 
-      <figure class="node" style="--x:48;--y:22;--w:260px;--z:1.10;--r:2;--delay:3.1;">
-        <img src="life-03.jpg" alt="Life photo 03" />
+      <figure class="node is-clickable"
+        style="--x:48;--y:22;--w:260px;--z:1.10;--r:2;--delay:3.1;"
+        data-title="Travel — small discoveries"
+        data-date="2025.01"
+        data-memory="Write your memory here.">
+        <img src="life-03.jpg" alt="Travel snapshot" />
         <figcaption class="chip">Travel — small discoveries</figcaption>
       </figure>
 
-      <figure class="node" style="--x:70;--y:18;--w:190px;--z:0.86;--r:-3;--delay:4.0;">
-        <img src="life-04.jpg" alt="Life photo 04" />
+      <figure class="node is-clickable"
+        style="--x:70;--y:18;--w:190px;--z:0.86;--r:-3;--delay:4.0;"
+        data-title="Coffee — quiet reset"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-04.jpg" alt="Coffee and light" />
         <figcaption class="chip">Coffee — quiet reset</figcaption>
       </figure>
 
-      <figure class="node" style="--x:86;--y:30;--w:230px;--z:1.22;--r:3;--delay:1.8;">
-        <img src="life-05.jpg" alt="Life photo 05" />
+      <figure class="node is-clickable"
+        style="--x:86;--y:30;--w:230px;--z:1.22;--r:3;--delay:1.8;"
+        data-title="Hiking — clarity"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-05.jpg" alt="Hiking moment" />
         <figcaption class="chip">Hiking — clarity</figcaption>
       </figure>
 
-      <figure class="node" style="--x:78;--y:48;--w:150px;--z:0.78;--r:6;--delay:2.9;">
-        <img src="life-06.jpg" alt="Life photo 06" />
+      <figure class="node is-clickable"
+        style="--x:78;--y:48;--w:150px;--z:0.78;--r:6;--delay:2.9;"
+        data-title="Tennis — rhythm"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-06.jpg" alt="Tennis moment" />
         <figcaption class="chip">Tennis — rhythm</figcaption>
       </figure>
 
-      <figure class="node" style="--x:60;--y:46;--w:210px;--z:0.96;--r:-2;--delay:3.8;">
-        <img src="life-07.jpg" alt="Life photo 07" />
+      <figure class="node is-clickable"
+        style="--x:60;--y:46;--w:210px;--z:0.96;--r:-2;--delay:3.8;"
+        data-title="Sketching — details"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-07.jpg" alt="Sketching moment" />
         <figcaption class="chip">Sketching — details</figcaption>
       </figure>
 
-      <figure class="node" style="--x:42;--y:42;--w:140px;--z:0.72;--r:-7;--delay:4.6;">
-        <img src="life-08.jpg" alt="Life photo 08" />
+      <figure class="node is-clickable"
+        style="--x:42;--y:42;--w:140px;--z:0.72;--r:-7;--delay:4.6;"
+        data-title="Languages — tiny progress"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-08.jpg" alt="Language notes" />
         <figcaption class="chip">Languages — tiny progress</figcaption>
       </figure>
 
-      <figure class="node" style="--x:22;--y:44;--w:170px;--z:0.84;--r:5;--delay:2.1;">
-        <img src="life-09.jpg" alt="Life photo 09" />
+      <figure class="node is-clickable"
+        style="--x:22;--y:44;--w:170px;--z:0.84;--r:5;--delay:2.1;"
+        data-title="Window light — calm"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-09.jpg" alt="Window light" />
         <figcaption class="chip">Window light — calm</figcaption>
       </figure>
 
-      <figure class="node" style="--x:12;--y:58;--w:260px;--z:1.28;--r:2;--delay:3.3;">
-        <img src="life-10.jpg" alt="Life photo 10" />
+      <figure class="node is-clickable"
+        style="--x:12;--y:58;--w:260px;--z:1.28;--r:2;--delay:3.3;"
+        data-title="Nature — breathing room"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-10.jpg" alt="Nature moment" />
         <figcaption class="chip">Nature — breathing room</figcaption>
       </figure>
 
-      <figure class="node" style="--x:30;--y:66;--w:180px;--z:0.88;--r:-4;--delay:4.2;">
-        <img src="life-11.jpg" alt="Life photo 11" />
+      <figure class="node is-clickable"
+        style="--x:30;--y:66;--w:180px;--z:0.88;--r:-4;--delay:4.2;"
+        data-title="Food — little joys"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-11.jpg" alt="Food moment" />
         <figcaption class="chip">Food — little joys</figcaption>
       </figure>
 
-      <figure class="node" style="--x:50;--y:64;--w:300px;--z:1.32;--r:3;--delay:1.5;">
-        <img src="life-12.jpg" alt="Life photo 12" />
+      <figure class="node is-clickable"
+        style="--x:50;--y:64;--w:300px;--z:1.32;--r:3;--delay:1.5;"
+        data-title="Road trip — open skies"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-12.jpg" alt="Road trip moment" />
         <figcaption class="chip">Road trip — open skies</figcaption>
       </figure>
 
-      <figure class="node" style="--x:72;--y:66;--w:190px;--z:0.92;--r:-2;--delay:2.6;">
-        <img src="life-13.jpg" alt="Life photo 13" />
+      <figure class="node is-clickable"
+        style="--x:72;--y:66;--w:190px;--z:0.92;--r:-2;--delay:2.6;"
+        data-title="Museum — slow looking"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-13.jpg" alt="Museum moment" />
         <figcaption class="chip">Museum — slow looking</figcaption>
       </figure>
 
-      <figure class="node" style="--x:88;--y:62;--w:160px;--z:0.76;--r:5;--delay:3.7;">
-        <img src="life-14.jpg" alt="Life photo 14" />
+      <figure class="node is-clickable"
+        style="--x:88;--y:62;--w:160px;--z:0.76;--r:5;--delay:3.7;"
+        data-title="Friends — warm moments"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-14.jpg" alt="Friends moment" />
         <figcaption class="chip">Friends — warm moments</figcaption>
       </figure>
 
-      <figure class="node" style="--x:68;--y:82;--w:240px;--z:1.06;--r:-5;--delay:4.4;">
-        <img src="life-15.jpg" alt="Life photo 15" />
+      <figure class="node is-clickable"
+        style="--x:68;--y:82;--w:240px;--z:1.06;--r:-5;--delay:4.4;"
+        data-title="Sunset — gratitude"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-15.jpg" alt="Sunset moment" />
         <figcaption class="chip">Sunset — gratitude</figcaption>
       </figure>
 
-      <figure class="node" style="--x:34;--y:84;--w:150px;--z:0.70;--r:6;--delay:2.0;">
-        <img src="life-16.jpg" alt="Life photo 16" />
+      <figure class="node is-clickable"
+        style="--x:34;--y:84;--w:150px;--z:0.70;--r:6;--delay:2.0;"
+        data-title="Music — in between"
+        data-date=""
+        data-memory="Write your memory here.">
+        <img src="life-16.jpg" alt="Music moment" />
         <figcaption class="chip">Music — in between</figcaption>
       </figure>
+
     </section>
   </main>
-<footer class="site-footer">
+
+  <!-- ✅ Memory Modal (one-time) -->
+  <div class="modal" id="memoryModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="1"></div>
+
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" type="button" aria-label="Close" data-close="1">×</button>
+
+      <div class="modal__media">
+        <img id="modalImg" src="" alt="" />
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__meta">
+          <h3 class="modal__title" id="modalTitle"></h3>
+          <p class="modal__date" id="modalDate"></p>
+        </div>
+        <p class="modal__text" id="modalText"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
     © 2026 Haoyun Ren. All rights reserved.
   </footer>
+
   <script src="life.js"></script>
 </body>
 </html>
+
 

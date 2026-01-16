@@ -1,1 +1,307 @@
+/* =====================
+   Spring Warm Theme — LIFE / Memory Constellation
+   (Keep nav capsule consistent with style-about.css vibe)
+===================== */
+:root{
+  --ink: #1f2a32;
+  --ink-soft: rgba(31, 42, 50, .78);
+  --muted: rgba(31, 42, 50, .62);
+
+  --bg1: #fff6df;   /* creamy yellow */
+  --bg2: #ffe9ee;   /* soft pink */
+  --bg3: #e9fff1;   /* mint */
+
+  --border: rgba(31, 42, 50, .12);
+
+  --radius: 18px;
+  --shadow: 0 10px 28px rgba(0,0,0,.08);
+
+  --navH: 66px;
+  --maxW: 1120px;
+}
+
+/* =====================
+   Reset
+===================== */
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 700px at 10% 10%, rgba(255,233,238,.85), rgba(255,233,238,0) 60%),
+    radial-gradient(1000px 680px at 90% 20%, rgba(233,255,241,.78), rgba(233,255,241,0) 58%),
+    radial-gradient(1000px 700px at 50% 100%, rgba(255,246,223,.88), rgba(255,246,223,0) 62%),
+    linear-gradient(180deg, #fff 0%, #fff 100%);
+  overflow-x: hidden;
+}
+a{ color: inherit; text-decoration: none; }
+img{ max-width:100%; display:block; }
+
+/* =====================
+   Fixed Capsule Nav
+===================== */
+.topbar{
+  position: fixed;
+  top: 16px;
+  left: 0; right: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+.nav-wrap{
+  width: min(var(--maxW), calc(100% - 28px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+.nav{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.nav a{
+  font-size: 13px;
+  letter-spacing: .02em;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+  white-space: nowrap;
+}
+.nav a:hover{
+  background: rgba(255,255,255,.65);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+.nav a.active{
+  background: rgba(255,255,255,.9);
+  color: var(--ink);
+  border: 1px solid rgba(31,42,50,.08);
+}
+
+/* =====================
+   Page Layout
+===================== */
+main{
+  width: min(var(--maxW), calc(100% - 28px));
+  margin: 0 auto;
+  padding: calc(var(--navH) + 44px) 0 72px;
+}
+.header{
+  display:flex;
+  gap: 18px;
+  align-items:flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.title{
+  margin:0;
+  font-size: clamp(26px, 4vw, 40px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.subtitle{
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+/* =====================
+   Constellation Stage
+===================== */
+.stage{
+  position: relative;
+  border-radius: 26px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.46);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 640px;
+  height: min(76vh, 820px);
+
+  /* parallax vars written by JS */
+  --px: 0px;
+  --py: 0px;
+}
+
+/* nebula overlays */
+.stage::before,
+.stage::after{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  pointer-events:none;
+  background:
+    radial-gradient(closest-side at 25% 30%, rgba(255,233,238,.55), rgba(255,233,238,0) 60%),
+    radial-gradient(closest-side at 80% 25%, rgba(233,255,241,.48), rgba(233,255,241,0) 60%),
+    radial-gradient(closest-side at 55% 85%, rgba(255,246,223,.55), rgba(255,246,223,0) 62%);
+  filter: blur(10px);
+  opacity: .95;
+  transform: translateZ(0);
+}
+.stage::after{
+  opacity: .55;
+  filter: blur(18px);
+  mix-blend-mode: multiply;
+}
+
+/* tiny stars texture */
+.stars{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.55;
+  background-image:
+    radial-gradient(circle at 18% 30%, rgba(31,42,50,.22) 1px, rgba(0,0,0,0) 2px),
+    radial-gradient(circle at 46% 18%, rgba(31,42,50,.14) 1px, rgba(0,0,0,0) 2px),
+    radial-gradient(circle at 62% 40%, rgba(31,42,50,.16) 1px, rgba(0,0,0,0) 2px),
+    radial-gradient(circle at 82% 22%, rgba(31,42,50,.18) 1px, rgba(0,0,0,0) 2px),
+    radial-gradient(circle at 25% 70%, rgba(31,42,50,.16) 1px, rgba(0,0,0,0) 2px),
+    radial-gradient(circle at 70% 78%, rgba(31,42,50,.15) 1px, rgba(0,0,0,0) 2px),
+    radial-gradient(circle at 88% 65%, rgba(31,42,50,.12) 1px, rgba(0,0,0,0) 2px);
+  background-size: 100% 100%;
+}
+
+/* center note */
+.center-note{
+  position:absolute;
+  left: 22px;
+  top: 18px;
+  z-index: 2;
+  display:inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(31,42,50,.10);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: min(420px, calc(100% - 44px));
+}
+.center-note strong{
+  font-size: 13.5px;
+  letter-spacing: .02em;
+}
+.center-note span{
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* =====================
+   Photo Nodes
+===================== */
+.node{
+  position:absolute;
+  left: calc(var(--x) * 1%);
+  top:  calc(var(--y) * 1%);
+  width: clamp(130px, var(--w), 340px);
+  aspect-ratio: 4 / 3;
+
+  transform:
+    translate(-50%, -50%)
+    translate(calc(var(--px) * var(--z)), calc(var(--py) * var(--z)))
+    rotate(calc(var(--r) * 1deg));
+
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 16px 42px rgba(0,0,0,.12);
+  border: 1px solid rgba(31,42,50,.10);
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+  z-index: 1;
+
+  animation: floaty 7.6s ease-in-out infinite;
+  animation-delay: calc(var(--delay) * -1s);
+}
+.node img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  filter: saturate(1.02) contrast(1.02);
+}
+@keyframes floaty{
+  0%,100%{
+    transform:
+      translate(-50%, -50%)
+      translate(calc(var(--px) * var(--z)), calc(var(--py) * var(--z)))
+      rotate(calc(var(--r) * 1deg))
+      translateY(0px);
+  }
+  50%{
+    transform:
+      translate(-50%, -50%)
+      translate(calc(var(--px) * var(--z)), calc(var(--py) * var(--z)))
+      rotate(calc(var(--r) * 1deg))
+      translateY(-10px);
+  }
+}
+.node:hover{
+  box-shadow: 0 22px 58px rgba(0,0,0,.16);
+  transform:
+    translate(-50%, -50%)
+    translate(calc(var(--px) * (var(--z) + .16)), calc(var(--py) * (var(--z) + .16)))
+    rotate(calc(var(--r) * .85deg))
+    scale(1.03);
+  z-index: 5;
+}
+
+/* caption chip */
+.chip{
+  position:absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  color: var(--ink);
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(31,42,50,.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  max-width: calc(100% - 24px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .22s ease, transform .22s ease;
+}
+.node:hover .chip{
+  opacity: .95;
+  transform: translateY(0px);
+}
+
+/* =====================
+   Responsive
+===================== */
+@media (max-width: 720px){
+  .header{ flex-direction: column; align-items:flex-start; }
+  .stage{ min-height: 600px; height: 72vh; }
+  .node{ border-radius: 18px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .node{ animation: none !important; transition: none !important; }
+}
 

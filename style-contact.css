@@ -14,7 +14,7 @@
   --shadow: 0 10px 28px rgba(0,0,0,.10);
 
   /* ✅ 背景图设置：改这里就行 */
-  --bg-img: url("assets/img/contact-bg.jpg");
+  --bg-img: url("contact.jpg");
   --bg-dim: .18;     /* 0~0.4：越大越“压暗” */
   --bg-blur: 0px;    /* 想要朦胧感就改成 6px/10px */
 }

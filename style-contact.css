@@ -74,6 +74,8 @@ body{
   padding: 7px 12px;
   border-radius: 999px;
   color: rgba(31, 42, 50, .72);
+  text-decoration: none;
+
 }
 
 .nav-link:hover{

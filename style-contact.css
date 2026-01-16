@@ -226,5 +226,13 @@ body::after{
     padding: 18px 16px 14px;
   }
 }
+/* ===== Force remove underline in top nav (override) ===== */
+.site-nav .nav-link,
+.site-nav .nav-link:visited,
+.site-nav .nav-link:hover,
+.site-nav .nav-link:active,
+.site-nav .nav-link:focus{
+  text-decoration: none !important;
+}
 
 

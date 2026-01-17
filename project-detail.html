@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Detail | Rita Ren</title>
+
+  <link rel="stylesheet" href="style-program.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">HELLO</a></li>
+          <li><a class="nav-link" href="about.html">ABOUT</a></li>
+          <li><a class="nav-link" href="program.html">WORK</a></li>
+          <li><a class="nav-link active" href="projects.html">PROJECTS</a></li>
+          <li><a class="nav-link" href="life-hobbies.html">LIFE</a></li>
+          <li><a class="nav-link" href="resume.html">RESUME</a></li>
+          <li><a class="nav-link" href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="detail-head">
+      <a class="back-link" href="projects.html">‹ Back to Projects</a>
+      <h1 id="dTitle">Loading…</h1>
+      <p class="muted" id="dMeta"></p>
+    </section>
+
+    <section class="detail-hero" id="dHero"></section>
+    <section class="detail-card" id="dContent"></section>
+
+    <footer class="page-footer">
+      <p class="footer-text">© <span id="year"></span> Haoyun Ren</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const data = {
+      "case-competition-1": {
+        title: "Case Competition — Strategy Recommendation",
+        meta: "Vancouver · 2025 · Problem Framing / Market Sizing / Storytelling",
+        hero: "proj-case.jpg",
+        content: `
+          <h2>Context</h2>
+          <p>
+            A case competition focused on producing a decision-ready recommendation under limited time and incomplete information.
+            My main goal was to keep the analysis structured and the storyline crisp.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              <strong>Problem framing:</strong>
+              clarified the decision scope, key constraints, and what “success” should look like for the client.
+            </li>
+            <li>
+              <strong>Market & customer structure:</strong>
+              drafted a simple market sizing logic and translated customer needs into a prioritized target segment.
+            </li>
+            <li>
+              <strong>Trade-offs & recommendation:</strong>
+              compared options and packaged the final proposal into an action-oriented narrative.
+            </li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <ul>
+            <li>
+              Good strategy work is not about adding more slides — it’s about making assumptions visible and decisions easy.
+            </li>
+            <li>
+              A strong recommendation always includes what you chose <em>not</em> to do (and why).
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Excel · Desk research · Slide storytelling</p>
+        `
+      },
+
+      "student-club-ops": {
+        title: "Student Organization — Ops & Execution",
+        meta: "UBC · 2024 – 2025 · Operations / Coordination / Process Improvement",
+        hero: "proj-club.jpg",
+        content: `
+          <h2>Context</h2>
+          <p>
+            Supported a campus organization through event operations and member engagement work.
+            The focus was building repeatable processes so execution stayed smooth as activities scaled.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              <strong>Event operations:</strong>
+              created run-of-show plans, coordinated logistics, and aligned owners to timelines.
+            </li>
+            <li>
+              <strong>Promotion support:</strong>
+              helped with outreach and content planning to improve attendance and engagement.
+            </li>
+            <li>
+              <strong>Process improvements:</strong>
+              collected feedback and proposed small changes that reduced friction for future events.
+            </li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <ul>
+            <li>
+              Ops is a leverage function: clarity and cadence often matter more than “working harder.”
+            </li>
+            <li>
+              Small improvements compound when you repeat the same workflow.
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Google Workspace · Notion/Docs · Basic tracking (attendance/feedback)</p>
+        `
+      },
+
+      "analytics-competition": {
+        title: "Analytics Challenge — Insights to Actions",
+        meta: "UBC · 2025 · EDA / Visualization / Recommendations",
+        hero: "proj-analytics.jpg",
+        content: `
+          <h2>Context</h2>
+          <p>
+            An analytics-style challenge where the objective was to turn a dataset into insights and communicate recommendations clearly.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              <strong>Data validation:</strong>
+              checked definitions, handled missing values, and validated metrics before building any narrative.
+            </li>
+            <li>
+              <strong>Key driver analysis:</strong>
+              identified patterns that explained performance differences across segments.
+            </li>
+            <li>
+              <strong>Recommendation:</strong>
+              translated insights into a short list of actions with rationale and expected impact.
+            </li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <ul>
+            <li>
+              The fastest way to lose trust is to skip metric validation — clarity beats complexity.
+            </li>
+            <li>
+              Analytics creates value only when it leads to decisions someone can execute.
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Excel · Visualization · Slides (Python/R optional)</p>
+        `
+      }
+    };
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const d = data[id];
+
+    const titleEl = document.getElementById("dTitle");
+    const metaEl  = document.getElementById("dMeta");
+    const heroEl  = document.getElementById("dHero");
+    const contEl  = document.getElementById("dContent");
+
+    if (!d) {
+      titleEl.textContent = "Not Found";
+      metaEl.textContent = "This project item doesn’t exist.";
+      heroEl.innerHTML = "";
+      contEl.innerHTML = `
+        <div class="detail-inner">
+          <p class="muted">Go back and open another item from the Projects page.</p>
+        </div>
+      `;
+    } else {
+      titleEl.textContent = d.title;
+      metaEl.textContent = d.meta;
+      heroEl.innerHTML = \`<img class="hero-img" src="\${d.hero}" alt="">\`;
+      contEl.innerHTML = \`<div class="detail-inner">\${d.content}</div>\`;
+    }
+  </script>
+</body>
+</html>

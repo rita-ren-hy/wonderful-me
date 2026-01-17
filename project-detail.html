@@ -12,6 +12,14 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
+
+      <!-- Language Toggle (EN | 中文) -->
+      <div class="lang-toggle">
+        <span class="lang-current">EN</span>
+        <span class="lang-sep">｜</span>
+        <a id="toZH" href="project-detail-zh.html" class="lang-link">中文</a>
+      </div>
+
       <nav class="site-nav">
         <ul class="nav-list">
           <li><a class="nav-link" href="index.html">HELLO</a></li>
@@ -43,6 +51,12 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ✅ Keep current id when switching language (EN -> ZH)
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id") || "";
+    document.getElementById("toZH").href =
+      `project-detail-zh.html?id=${encodeURIComponent(id)}`;
 
     // Projects data (aligned with your projects.html order)
     const data = {
@@ -325,8 +339,6 @@
       }
     };
 
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id");
     const d = data[id];
 
     const titleEl = document.getElementById("dTitle");
@@ -352,4 +364,5 @@
   </script>
 </body>
 </html>
+
 

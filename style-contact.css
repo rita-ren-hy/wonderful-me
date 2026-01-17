@@ -64,6 +64,8 @@ body::after{
 /* =====================
    Fixed Capsule Nav
 ===================== */
+   Top Nav
+===================== */
 .site-header{
   position: fixed;
   top: 0;
@@ -92,7 +94,6 @@ body::after{
   padding: 7px 12px;
   border-radius: 999px;
   color: rgba(31, 42, 50, .72);
-  text-decoration: none; /* ✅ 去掉下划线 */
 }
 
 .nav-link:hover{

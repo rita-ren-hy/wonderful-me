@@ -50,12 +50,12 @@
   </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Keep current id when switching language
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id") || "";
-    document.getElementById("toEN").href = `project-detail-zh.html?id=${encodeURIComponent(id)}`;
+  // Keep current id when switching language
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id") || "";
+  document.getElementById("toEN").href = `project-detail.html?id=${encodeURIComponent(id)}`;
 
     // 中文版本：保持事实一致，但按中文语序/语境重写
     const data = {

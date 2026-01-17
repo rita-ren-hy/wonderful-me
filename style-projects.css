@@ -230,9 +230,19 @@ body{
   width:100%;
   height:100%;
   object-fit: cover;
-  object-position: 50% 25%; /* ✅ 把画面往上提，脸更容易出现 */
+}
+/* ===== Image position overrides (per card) ===== */
+.t-item.pos-top .work-cover img{
+  object-position: 50% 20%;
 }
 
+.t-item.pos-center .work-cover img{
+  object-position: 50% 50%;
+}
+
+.t-item.pos-bottom .work-cover img{
+  object-position: 50% 70%;
+}
 
 .work-body{
   padding: 18px 18px 14px;

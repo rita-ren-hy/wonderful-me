@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PROJECTS | Rita Ren</title>
 
-  <!-- Reuse the same CSS to keep site consistent -->
+  <!-- Projects page stylesheet -->
   <link rel="stylesheet" href="style-projects.css" />
 </head>
 
 <body>
+  <!-- Header: nav (kept consistent) -->
   <header class="site-header">
     <div class="header-inner">
       <nav class="site-nav">
@@ -30,35 +31,43 @@
     <section class="page-hero">
       <h1 class="page-title">Projects</h1>
       <p class="page-subtitle">
-        Campus experiences that shaped my problem-solving style — clubs, competitions, and hands-on work.
+        Selected campus experiences — clubs, competitions, and hands-on projects.
         Click each card to read the full story.
       </p>
+
+      <!-- ✅ Quick Jumps -->
+      <div class="project-jumps" aria-label="Quick project navigation">
+        <a class="jump-pill" href="#proj-google">2025 Google Hackathon</a>
+        <a class="jump-pill" href="#proj-climate">2025 Climate Finance</a>
+        <a class="jump-pill" href="#proj-learning">2024 Learning Analytics</a>
+      </div>
     </section>
 
+    <!-- Timeline -->
     <section class="timeline" aria-label="Projects timeline">
 
       <!-- ===== Project #1 ===== -->
-      <article class="t-item">
+      <article class="t-item" id="proj-google">
         <div class="t-marker" aria-hidden="true">
           <span class="dot"></span>
           <span class="line"></span>
         </div>
 
-        <a class="work-card" href="project-detail.html?id=case-competition-1" aria-label="Read more about Case Competition project">
+        <a class="work-card" href="project-detail.html?id=case-competition-1" aria-label="Read more about Google Hackathon project">
           <div class="work-cover">
-            <img src="proj-case.jpg" alt="Case competition cover" loading="lazy">
+            <img src="proj-case.jpg" alt="Google Hackathon cover" loading="lazy">
           </div>
 
           <div class="work-body">
-            <h2 class="work-title">Case Competition — Strategy Recommendation</h2>
+            <h2 class="work-title">Google Hackathon — Data Product Prototype</h2>
 
             <div class="work-meta">
               <span class="meta-item"><span class="meta-ico">📅</span>2025</span>
-              <span class="meta-item"><span class="meta-ico">🏷️</span>Problem Framing · Market Sizing · Storytelling</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>Hackathon · Analytics · Prototype</span>
             </div>
 
             <p class="work-teaser">
-              Built a decision-ready strategy under time pressure by turning ambiguity into a structured storyline and clear trade-offs.
+              Built a rapid prototype that turned messy inputs into a clear user flow and measurable outputs.
             </p>
 
             <div class="work-footer">
@@ -69,27 +78,27 @@
       </article>
 
       <!-- ===== Project #2 ===== -->
-      <article class="t-item">
+      <article class="t-item" id="proj-climate">
         <div class="t-marker" aria-hidden="true">
           <span class="dot"></span>
           <span class="line"></span>
         </div>
 
-        <a class="work-card" href="project-detail.html?id=student-club-ops" aria-label="Read more about Student Organization project">
+        <a class="work-card" href="project-detail.html?id=analytics-competition" aria-label="Read more about Climate Finance project">
           <div class="work-cover">
-            <img src="proj-club.jpg" alt="Student organization cover" loading="lazy">
+            <img src="proj-analytics.jpg" alt="Climate finance project cover" loading="lazy">
           </div>
 
           <div class="work-body">
-            <h2 class="work-title">Student Organization — Ops & Execution</h2>
+            <h2 class="work-title">Climate Finance — Project Finance Structuring</h2>
 
             <div class="work-meta">
-              <span class="meta-item"><span class="meta-ico">📅</span>2024 – 2025</span>
-              <span class="meta-item"><span class="meta-ico">🏷️</span>Operations · Coordination · Process Improvement</span>
+              <span class="meta-item"><span class="meta-ico">📅</span>2025</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>Project Finance · Risk · DSCR</span>
             </div>
 
             <p class="work-teaser">
-              Supported event operations and member engagement by building repeatable workflows and tightening execution details.
+              Structured a bankability narrative and compared financing options with explicit trade-offs.
             </p>
 
             <div class="work-footer">
@@ -100,27 +109,27 @@
       </article>
 
       <!-- ===== Project #3 ===== -->
-      <article class="t-item">
+      <article class="t-item" id="proj-learning">
         <div class="t-marker" aria-hidden="true">
           <span class="dot"></span>
           <span class="line"></span>
         </div>
 
-        <a class="work-card" href="project-detail.html?id=analytics-competition" aria-label="Read more about Analytics Challenge project">
+        <a class="work-card" href="project-detail.html?id=student-club-ops" aria-label="Read more about Learning Analytics project">
           <div class="work-cover">
-            <img src="proj-analytics.jpg" alt="Analytics challenge cover" loading="lazy">
+            <img src="proj-club.jpg" alt="Learning analytics project cover" loading="lazy">
           </div>
 
           <div class="work-body">
-            <h2 class="work-title">Analytics Challenge — Insights to Actions</h2>
+            <h2 class="work-title">Learning Analytics — Engagement Insights</h2>
 
             <div class="work-meta">
-              <span class="meta-item"><span class="meta-ico">📅</span>2025</span>
-              <span class="meta-item"><span class="meta-ico">🏷️</span>EDA · Visualization · Recommendations</span>
+              <span class="meta-item"><span class="meta-ico">📅</span>2024</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>EDA · Visualization · Insights</span>
             </div>
 
             <p class="work-teaser">
-              Translated a dataset into actionable recommendations by validating metrics, surfacing key drivers, and communicating the “so what”.
+              Analyzed engagement signals and translated patterns into actionable improvements.
             </p>
 
             <div class="work-footer">
@@ -142,4 +151,5 @@
   </script>
 </body>
 </html>
+
 

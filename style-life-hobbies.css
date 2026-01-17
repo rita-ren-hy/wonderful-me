@@ -478,8 +478,9 @@ main{
     display: none;
   }
 }
- ===================== */
-Language Toggle (EN | 中文)
+/* =====================
+  /* =====================
+   Language Toggle (EN | 中文)
 ===================== */
 .lang-toggle{
   position: fixed;
@@ -521,3 +522,5 @@ Language Toggle (EN | 中文)
   color: rgba(31, 42, 50, .4);
   pointer-events: none;
 }
+
+

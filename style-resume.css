@@ -38,6 +38,8 @@ a{ color: inherit; text-decoration: none; }
 /* =====================
    Nav
 ===================== */
+   Top Nav
+===================== */
 .site-header{
   position: fixed;
   top: 0;
@@ -50,7 +52,6 @@ a{ color: inherit; text-decoration: none; }
   margin-left: auto;
   width: fit-content;
   display: flex;
-  flex-wrap: wrap;
   gap: 14px;
   padding: 8px 10px;
   border-radius: 999px;
@@ -76,10 +77,9 @@ a{ color: inherit; text-decoration: none; }
 
 .nav-link.active{
   color: var(--ink);
-  background: rgba(255,255,255,.80);
+  background: rgba(255,255,255,.78);
   border: 1px solid rgba(31, 42, 50, .10);
 }
-
 /* =====================
    Layout
 ===================== */

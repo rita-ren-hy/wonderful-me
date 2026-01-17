@@ -48,51 +48,59 @@ a {
 /* =====================
    Header / Nav
 ===================== */
-.site-header {
+Top Nav (same as Work / About)
+===================== */
+.site-header{
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 30;
-  background: transparent;
+  z-index: 50;
+  padding: 14px 18px;
 }
 
-.header-inner {
-  padding: 14px var(--side-pad);
+.header-inner{ width:100%; margin:0; }
+
+.site-nav{
+  margin-left: auto;
+  width: fit-content;
   display: flex;
-  justify-content: flex-end;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-  padding: 0;
-  margin: 0;
-}
-
-/* ✅ 导航字体白色 */
-.nav-link {
-  font-size: 14px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
-  padding: 6px 12px;
+  gap: 14px;
+  padding: 8px 10px;
   border-radius: 999px;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
-/* ✅ active 仍然是浅色 pill，但字更深，清晰 */
-.nav-link.active {
-  background: rgba(255, 255, 255, 0.78);
-  color: #203027;
-  text-shadow: none;
+.nav-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:14px;
+  align-items:center;
 }
 
-/* ✅ 防止你 JS 加 scrolled 时出现任何灰条 */
-.site-nav.scrolled,
-.site-header.scrolled {
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+.nav-link{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.4px;
+  padding:7px 12px;
+  border-radius:999px;
+  color: rgba(31, 42, 50, .72);
+  display:inline-block;
+}
+
+.nav-link:hover{
+  color: var(--ink);
+  background: rgba(255,255,255,.55);
+}
+
+.nav-link.active{
+  color: var(--ink);
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(31, 42, 50, .10);
 }
 
 /* =====================

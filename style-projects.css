@@ -233,7 +233,7 @@ body{
 }
 /* ===== Image position overrides (per card) ===== */
 .t-item.pos-top .work-cover img{
-  object-position: 50% 20%;
+  object-position: 50% 30%;
 }
 
 .t-item.pos-center .work-cover img{

@@ -454,4 +454,10 @@ main{
   color: var(--muted);
   font-size: 13px;
 }
+.hint{
+  display:block;
+  margin-top:8px;
+  font-size:13px;
+  color: rgba(31,42,50,.55);
+}
 

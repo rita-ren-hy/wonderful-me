@@ -288,3 +288,45 @@ body::after{
     display: none;
   }
 }
+ Language Toggle (EN | 中文)
+===================== */
+.lang-toggle{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 60;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+.lang-link{
+  color: rgba(31, 42, 50, .78);
+  text-decoration: none;
+}
+
+.lang-link:hover{
+  color: var(--ink);
+}
+
+.lang-current{
+  color: var(--ink);
+}
+
+.lang-sep{
+  color: rgba(31, 42, 50, .4);
+  pointer-events: none;
+}

@@ -230,7 +230,9 @@ body{
   width:100%;
   height:100%;
   object-fit: cover;
+  object-position: 50% 25%; /* ✅ 把画面往上提，脸更容易出现 */
 }
+
 
 .work-body{
   padding: 18px 18px 14px;

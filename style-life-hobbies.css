@@ -461,3 +461,20 @@ main{
   color: rgba(31,42,50,.55);
 }
 
+@media (max-width: 720px){
+
+  .site-nav{
+    max-width: 100%;
+    overflow-x: auto;        /* 🔥关键 */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-list{
+    flex-wrap: nowrap;       /* 不换行 */
+  }
+
+  /* 隐藏滚动条（好看） */
+  .site-nav::-webkit-scrollbar{
+    display: none;
+  }
+}

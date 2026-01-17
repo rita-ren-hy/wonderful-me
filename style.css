@@ -46,9 +46,8 @@ a {
 }
 
 /* =====================
-   Header / Nav
-===================== */
-Top Nav (same as Work / About)
+/* =====================
+   Top Nav (Aligned with about)
 ===================== */
 .site-header{
   position: fixed;
@@ -58,38 +57,51 @@ Top Nav (same as Work / About)
   padding: 14px 18px;
 }
 
-.header-inner{ width:100%; margin:0; }
+.header-inner{
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
 
 .site-nav{
   margin-left: auto;
   width: fit-content;
+
   display: flex;
+  align-items: center;
   gap: 14px;
+
   padding: 8px 10px;
   border-radius: 999px;
+
   background: rgba(255,255,255,.55);
   border: 1px solid var(--border);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
+/* if your nav uses <ul class="nav-list"> */
 .nav-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:flex;
-  gap:14px;
-  align-items:center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .nav-link{
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.4px;
-  padding:7px 12px;
-  border-radius:999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+
+  padding: 7px 12px;
+  border-radius: 999px;
+
   color: rgba(31, 42, 50, .72);
-  display:inline-block;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .nav-link:hover{

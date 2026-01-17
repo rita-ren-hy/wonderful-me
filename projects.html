@@ -1,1 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PROJECTS | Rita Ren</title>
+
+  <!-- Reuse the same CSS to keep site consistent -->
+  <link rel="stylesheet" href="style-program.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">HELLO</a></li>
+          <li><a class="nav-link" href="about.html">ABOUT</a></li>
+          <li><a class="nav-link" href="program.html">WORK</a></li>
+          <li><a class="nav-link active" href="projects.html">PROJECTS</a></li>
+          <li><a class="nav-link" href="life-hobbies.html">LIFE</a></li>
+          <li><a class="nav-link" href="resume.html">RESUME</a></li>
+          <li><a class="nav-link" href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="page-hero">
+      <h1 class="page-title">Projects</h1>
+      <p class="page-subtitle">
+        Campus experiences that shaped my problem-solving style — clubs, competitions, and hands-on work.
+        Click each card to read the full story.
+      </p>
+    </section>
+
+    <section class="timeline" aria-label="Projects timeline">
+
+      <!-- ===== Project #1 ===== -->
+      <article class="t-item">
+        <div class="t-marker" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="line"></span>
+        </div>
+
+        <a class="work-card" href="project-detail.html?id=case-competition-1" aria-label="Read more about Case Competition project">
+          <div class="work-cover">
+            <img src="proj-case.jpg" alt="Case competition cover" loading="lazy">
+          </div>
+
+          <div class="work-body">
+            <h2 class="work-title">Case Competition — Strategy Recommendation</h2>
+
+            <div class="work-meta">
+              <span class="meta-item"><span class="meta-ico">📅</span>2025</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>Problem Framing · Market Sizing · Storytelling</span>
+            </div>
+
+            <p class="work-teaser">
+              Built a decision-ready strategy under time pressure by turning ambiguity into a structured storyline and clear trade-offs.
+            </p>
+
+            <div class="work-footer">
+              <span class="readmore">Read more <span class="arrow">›</span></span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- ===== Project #2 ===== -->
+      <article class="t-item">
+        <div class="t-marker" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="line"></span>
+        </div>
+
+        <a class="work-card" href="project-detail.html?id=student-club-ops" aria-label="Read more about Student Organization project">
+          <div class="work-cover">
+            <img src="proj-club.jpg" alt="Student organization cover" loading="lazy">
+          </div>
+
+          <div class="work-body">
+            <h2 class="work-title">Student Organization — Ops & Execution</h2>
+
+            <div class="work-meta">
+              <span class="meta-item"><span class="meta-ico">📅</span>2024 – 2025</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>Operations · Coordination · Process Improvement</span>
+            </div>
+
+            <p class="work-teaser">
+              Supported event operations and member engagement by building repeatable workflows and tightening execution details.
+            </p>
+
+            <div class="work-footer">
+              <span class="readmore">Read more <span class="arrow">›</span></span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- ===== Project #3 ===== -->
+      <article class="t-item">
+        <div class="t-marker" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="line"></span>
+        </div>
+
+        <a class="work-card" href="project-detail.html?id=analytics-competition" aria-label="Read more about Analytics Challenge project">
+          <div class="work-cover">
+            <img src="proj-analytics.jpg" alt="Analytics challenge cover" loading="lazy">
+          </div>
+
+          <div class="work-body">
+            <h2 class="work-title">Analytics Challenge — Insights to Actions</h2>
+
+            <div class="work-meta">
+              <span class="meta-item"><span class="meta-ico">📅</span>2025</span>
+              <span class="meta-item"><span class="meta-ico">🏷️</span>EDA · Visualization · Recommendations</span>
+            </div>
+
+            <p class="work-teaser">
+              Translated a dataset into actionable recommendations by validating metrics, surfacing key drivers, and communicating the “so what”.
+            </p>
+
+            <div class="work-footer">
+              <span class="readmore">Read more <span class="arrow">›</span></span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+    </section>
+
+    <footer class="page-footer">
+      <p class="footer-text">© <span id="year"></span> Haoyun Ren</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 

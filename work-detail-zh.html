@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>经历详情 | 任皓韵</title>
 
-  <!-- Reuse the same CSS -->
   <link rel="stylesheet" href="style-program.css" />
 </head>
 
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
 
-      <!-- Language Toggle -->
+      <!-- Language Toggle (keeps current id) -->
       <div class="lang-toggle">
-        <a href="work-detail.html?id=ecom-intern" class="lang-link">EN</a>
+        <a id="toEN" class="lang-link" href="work-detail.html">EN</a>
         <span class="lang-sep">｜</span>
         <span class="lang-current">中文</span>
       </div>
@@ -43,7 +41,6 @@
     </section>
 
     <section class="detail-hero" id="dHero"></section>
-
     <section class="detail-card" id="dContent"></section>
 
     <footer class="page-footer">
@@ -52,9 +49,17 @@
   </main>
 
   <script>
+    // 1) year (if this doesn't show, your script isn't running)
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // 中文版本：保持事实一致，但按中文逻辑与阅读习惯重写
+    // 2) read id
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id") || "";
+
+    // 3) keep id when switching to EN
+    document.getElementById("toEN").href = "work-detail.html?id=" + encodeURIComponent(id);
+
+    // 4) data
     const data = {
       "ecom-intern": {
         title: "电商运营实习生 — 鸿之美",
@@ -64,48 +69,24 @@
           <h2>背景</h2>
           <p>
             在一家初创的女性护理与个护品牌实习，品牌主要通过淘宝与抖音等电商平台进行销售。
-            实习期间的核心目标，是帮助团队在产品与增长相关决策中，减少拍脑袋判断，
-            用更清晰的分析与证据支持实际行动。
+            实习期间的重点，是把“该卖什么、怎么卖”的问题拆成可执行的分析与落地动作。
           </p>
 
           <h2>我主要做了什么</h2>
           <ul>
-            <li>
-              <strong>市场与竞品拆解：</strong>
-              系统性梳理主流平台上的头部品牌与核心 SKU，
-              从产品卖点、详情页结构、组合设计等角度进行拆解，
-              判断哪些做法可以借鉴，哪些地方适合差异化。
-            </li>
-            <li>
-              <strong>用户与定价分析：</strong>
-              基于用户调研数据，对消费者进行使用场景、价格敏感度与购买动机的分层分析，
-              支持品牌走中低价位、聚焦核心用户群的定价方向，
-              并与品牌的植物基定位保持一致。
-            </li>
-            <li>
-              <strong>转化与增长支持：</strong>
-              结合行业趋势与社媒内容表现，总结有效内容类型与用户评价特征，
-              协助提出以内容与口碑驱动的达人合作策略。
-              据内部反馈，该方向对转化率与用户满意度均有正向提升（约 15%）。
-            </li>
+            <li><strong>竞品拆解：</strong>梳理头部品牌与核心 SKU，从卖点、详情页结构、组合设计等角度总结可借鉴与可差异化的方向。</li>
+            <li><strong>用户与定价：</strong>基于调研数据做用户分层与价格敏感度分析，支持中低价位与核心人群聚焦的定价思路。</li>
+            <li><strong>转化支持：</strong>结合行业趋势与社媒内容表现，提出内容+口碑驱动的达人合作方向；内部反馈显示对转化与满意度有正向提升（约 15%）。</li>
           </ul>
 
           <h2>我的收获</h2>
           <ul>
-            <li>
-              学会将模糊的商业问题（例如“我们应该重点强调什么？”）
-              拆解为一套可重复的分析路径：
-              竞品结构 → 用户分层 → 定位与定价 → 内容与执行。
-            </li>
-            <li>
-              更清楚地认识到，分析本身并不等于价值，
-              只有当结论被整理成清晰的选项、取舍与建议，
-              并且能被团队快速执行时，分析才真正产生作用。
-            </li>
+            <li>把模糊问题变成工作流：竞品结构 → 用户分层 → 定位/定价 → 内容执行。</li>
+            <li>分析要“交付行动”：把结论整理成可选方案、取舍与下一步。</li>
           </ul>
 
-          <h2>使用工具</h2>
-          <p>Excel · 案头研究 · 问卷分析 · 电商平台观察</p>
+          <h2>工具</h2>
+          <p>Excel · 案头研究 · 问卷分析 · 平台观察</p>
         `
       },
 
@@ -116,75 +97,51 @@
         content: `
           <h2>背景</h2>
           <p>
-            在证券公司会计部门实习，主要支持财务数据管理与内部分析工作，
-            协助提升不同子公司之间数据的可比性，
-            同时为审计与合规工作打下更扎实的基础。
+            在证券公司会计部门实习，主要支持财务数据管理与内部分析，
+            提升跨子公司数据可比性，并支持审计与合规相关的资料整理与追溯。
           </p>
 
           <h2>我主要做了什么</h2>
           <ul>
-            <li>
-              <strong>财务分析与对标：</strong>
-              对内部财务数据进行整理与分析，
-              支持跨子公司的成本、费用及经营指标对比，
-              识别重要差异与潜在风险点。
-            </li>
-            <li>
-              <strong>标准化与决策支持：</strong>
-              协助建立更统一的报表口径与分析逻辑，
-              让不同团队、不同期间的数据结果具备可比性，
-              从而提高分析结论的可用性。
-            </li>
-            <li>
-              <strong>数据与合规支持：</strong>
-              使用 Excel 与财务系统维护会计数据，
-              整理凭证与档案材料，
-              提升数据可追溯性并支持审计与合规需求。
-            </li>
+            <li><strong>财务分析与对标：</strong>整理内部财务数据，支持跨子公司成本/费用/经营指标对比，识别重要差异与潜在风险点。</li>
+            <li><strong>标准化支持：</strong>协助统一报表口径与分析逻辑，提高结果可比性与可复用性。</li>
+            <li><strong>合规与归档：</strong>维护数据与档案材料，提高可追溯性，支持审计准备。</li>
           </ul>
 
           <h2>我的收获</h2>
           <ul>
-            <li>
-              深刻理解“统一口径”的重要性：
-              当定义与逻辑一致时，对标分析才能真正服务于决策。
-            </li>
-            <li>
-              学会以更“决策友好”的方式表达财务结论，
-              不只说明发生了什么，
-              更强调驱动因素、结构性变化与后续需要关注的风险信号。
-            </li>
+            <li>“统一口径”决定对标是否可靠；标准化越清晰，差异分析越可行动。</li>
+            <li>汇报不只讲变化，还要讲驱动与下一步关注点（结构性 vs 一次性、风险信号）。</li>
           </ul>
 
-          <h2>使用工具</h2>
+          <h2>工具</h2>
           <p>Excel · 财务系统 · 标准化报表模板</p>
         `
       }
     };
 
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id");
-    const d = data[id];
-
+    // 5) render (never stay "loading")
     const titleEl = document.getElementById("dTitle");
     const metaEl  = document.getElementById("dMeta");
     const heroEl  = document.getElementById("dHero");
     const contEl  = document.getElementById("dContent");
 
-    if (!d) {
+    const d = data[id];
+
+    if (!id || !d) {
       titleEl.textContent = "未找到该经历";
-      metaEl.textContent = "该经历不存在或链接有误。";
+      metaEl.textContent  = "链接缺少 id 参数，或该 id 不存在。请从“经历”页面重新点击进入。";
       heroEl.innerHTML = "";
       contEl.innerHTML = `
         <div class="detail-inner">
-          <p class="muted">请返回经历页面，选择其他内容查看。</p>
+          <p class="muted">返回后点击对应卡片进入（链接需要形如：work-detail-zh.html?id=ecom-intern）。</p>
         </div>
       `;
     } else {
       titleEl.textContent = d.title;
-      metaEl.textContent = d.meta;
-      heroEl.innerHTML = \`<img class="hero-img" src="\${d.hero}" alt="">\`;
-      contEl.innerHTML = \`<div class="detail-inner">\${d.content}</div>\`;
+      metaEl.textContent  = d.meta;
+      heroEl.innerHTML    = '<img class="hero-img" src="' + d.hero + '" alt="">';
+      contEl.innerHTML    = '<div class="detail-inner">' + d.content + '</div>';
     }
   </script>
 </body>

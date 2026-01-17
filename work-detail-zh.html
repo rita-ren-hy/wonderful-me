@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>经历详情 | 任皓韵</title>
+
+  <!-- Reuse the same CSS -->
+  <link rel="stylesheet" href="style-program.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Language Toggle -->
+      <div class="lang-toggle">
+        <a href="work-detail.html?id=ecom-intern" class="lang-link">EN</a>
+        <span class="lang-sep">｜</span>
+        <span class="lang-current">中文</span>
+      </div>
+
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index-zh.html">你好</a></li>
+          <li><a class="nav-link" href="about-zh.html">关于</a></li>
+          <li><a class="nav-link active" href="program-zh.html">经历</a></li>
+          <li><a class="nav-link" href="projects-zh.html">项目</a></li>
+          <li><a class="nav-link" href="life-hobbies-zh.html">生活</a></li>
+          <li><a class="nav-link" href="resume-zh.html">简历</a></li>
+          <li><a class="nav-link" href="contact-zh.html">联系</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="detail-head">
+      <a class="back-link" href="program-zh.html">‹ 返回经历</a>
+      <h1 id="dTitle">加载中…</h1>
+      <p class="muted" id="dMeta"></p>
+    </section>
+
+    <section class="detail-hero" id="dHero"></section>
+
+    <section class="detail-card" id="dContent"></section>
+
+    <footer class="page-footer">
+      <p class="footer-text">© <span id="year"></span> 任皓韵</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 中文版本：保持事实一致，但按中文逻辑与阅读习惯重写
+    const data = {
+      "ecom-intern": {
+        title: "电商运营实习生 — 鸿之美",
+        meta: "南京 · 2024.06 – 2024.08 · 市场分析 / 定价 / 转化",
+        hero: "ecom.jpg",
+        content: `
+          <h2>背景</h2>
+          <p>
+            在一家初创的女性护理与个护品牌实习，品牌主要通过淘宝与抖音等电商平台进行销售。
+            实习期间的核心目标，是帮助团队在产品与增长相关决策中，减少拍脑袋判断，
+            用更清晰的分析与证据支持实际行动。
+          </p>
+
+          <h2>我主要做了什么</h2>
+          <ul>
+            <li>
+              <strong>市场与竞品拆解：</strong>
+              系统性梳理主流平台上的头部品牌与核心 SKU，
+              从产品卖点、详情页结构、组合设计等角度进行拆解，
+              判断哪些做法可以借鉴，哪些地方适合差异化。
+            </li>
+            <li>
+              <strong>用户与定价分析：</strong>
+              基于用户调研数据，对消费者进行使用场景、价格敏感度与购买动机的分层分析，
+              支持品牌走中低价位、聚焦核心用户群的定价方向，
+              并与品牌的植物基定位保持一致。
+            </li>
+            <li>
+              <strong>转化与增长支持：</strong>
+              结合行业趋势与社媒内容表现，总结有效内容类型与用户评价特征，
+              协助提出以内容与口碑驱动的达人合作策略。
+              据内部反馈，该方向对转化率与用户满意度均有正向提升（约 15%）。
+            </li>
+          </ul>
+
+          <h2>我的收获</h2>
+          <ul>
+            <li>
+              学会将模糊的商业问题（例如“我们应该重点强调什么？”）
+              拆解为一套可重复的分析路径：
+              竞品结构 → 用户分层 → 定位与定价 → 内容与执行。
+            </li>
+            <li>
+              更清楚地认识到，分析本身并不等于价值，
+              只有当结论被整理成清晰的选项、取舍与建议，
+              并且能被团队快速执行时，分析才真正产生作用。
+            </li>
+          </ul>
+
+          <h2>使用工具</h2>
+          <p>Excel · 案头研究 · 问卷分析 · 电商平台观察</p>
+        `
+      },
+
+      "accounting-intern": {
+        title: "会计实习生 — 国泰君安证券",
+        meta: "南京 · 2023.05 – 2023.07 · 财务分析 / 对标分析 / 合规支持",
+        hero: "acc.jpg",
+        content: `
+          <h2>背景</h2>
+          <p>
+            在证券公司会计部门实习，主要支持财务数据管理与内部分析工作，
+            协助提升不同子公司之间数据的可比性，
+            同时为审计与合规工作打下更扎实的基础。
+          </p>
+
+          <h2>我主要做了什么</h2>
+          <ul>
+            <li>
+              <strong>财务分析与对标：</strong>
+              对内部财务数据进行整理与分析，
+              支持跨子公司的成本、费用及经营指标对比，
+              识别重要差异与潜在风险点。
+            </li>
+            <li>
+              <strong>标准化与决策支持：</strong>
+              协助建立更统一的报表口径与分析逻辑，
+              让不同团队、不同期间的数据结果具备可比性，
+              从而提高分析结论的可用性。
+            </li>
+            <li>
+              <strong>数据与合规支持：</strong>
+              使用 Excel 与财务系统维护会计数据，
+              整理凭证与档案材料，
+              提升数据可追溯性并支持审计与合规需求。
+            </li>
+          </ul>
+
+          <h2>我的收获</h2>
+          <ul>
+            <li>
+              深刻理解“统一口径”的重要性：
+              当定义与逻辑一致时，对标分析才能真正服务于决策。
+            </li>
+            <li>
+              学会以更“决策友好”的方式表达财务结论，
+              不只说明发生了什么，
+              更强调驱动因素、结构性变化与后续需要关注的风险信号。
+            </li>
+          </ul>
+
+          <h2>使用工具</h2>
+          <p>Excel · 财务系统 · 标准化报表模板</p>
+        `
+      }
+    };
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const d = data[id];
+
+    const titleEl = document.getElementById("dTitle");
+    const metaEl  = document.getElementById("dMeta");
+    const heroEl  = document.getElementById("dHero");
+    const contEl  = document.getElementById("dContent");
+
+    if (!d) {
+      titleEl.textContent = "未找到该经历";
+      metaEl.textContent = "该经历不存在或链接有误。";
+      heroEl.innerHTML = "";
+      contEl.innerHTML = `
+        <div class="detail-inner">
+          <p class="muted">请返回经历页面，选择其他内容查看。</p>
+        </div>
+      `;
+    } else {
+      titleEl.textContent = d.title;
+      metaEl.textContent = d.meta;
+      heroEl.innerHTML = \`<img class="hero-img" src="\${d.hero}" alt="">\`;
+      contEl.innerHTML = \`<div class="detail-inner">\${d.content}</div>\`;
+    }
+  </script>
+</body>
+</html>

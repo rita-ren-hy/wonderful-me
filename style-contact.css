@@ -66,12 +66,22 @@ body::after{
 ===================== */
    Top Nav
 ===================== */
+ Top Nav (IDENTICAL style to about)
+   Your HTML:
+   header.site-header > .header-inner > nav.site-nav > ul.nav-list > a.nav-link
+===================== */
 .site-header{
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 14px 18px;
+  padding: 14px 18px; /* ✅ match about */
+}
+
+/* Keep header-inner neutral (no width constraints) */
+.header-inner{
+  width: 100%;
+  margin: 0;
 }
 
 .site-nav{
@@ -87,6 +97,16 @@ body::after{
   box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
 
+/* program.html uses <ul class="nav-list">, so we style it as a row */
+.nav-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
 .nav-link{
   font-size: 13px;
   font-weight: 700;
@@ -94,6 +114,7 @@ body::after{
   padding: 7px 12px;
   border-radius: 999px;
   color: rgba(31, 42, 50, .72);
+  display: inline-block;
 }
 
 .nav-link:hover{

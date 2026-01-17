@@ -10,15 +10,17 @@
 </head>
 
 <body>
-  <!-- Header: your nav (kept as-is) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-        <!-- Language Toggle (keeps current id) -->
+
+      <!-- Language Toggle (EN | 中文) -->
       <div class="lang-toggle">
-        <a id="toEN" class="lang-link" href="work-detail.html">EN</a>
+        <span class="lang-current">EN</span>
         <span class="lang-sep">｜</span>
-        <span class="lang-current">中文</span>
+        <a id="toZH" class="lang-link" href="work-detail-zh.html">中文</a>
       </div>
+
       <nav class="site-nav">
         <ul class="nav-list">
           <li><a class="nav-link" href="index.html">HELLO</a></li>
@@ -41,7 +43,6 @@
     </section>
 
     <section class="detail-hero" id="dHero"></section>
-
     <section class="detail-card" id="dContent"></section>
 
     <footer class="page-footer">
@@ -51,6 +52,12 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ✅ Keep current id when switching language (EN -> ZH)
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id") || "";
+    document.getElementById("toZH").href =
+      `work-detail-zh.html?id=${encodeURIComponent(id)}`;
 
     // NOTE: Content is written ONLY based on the resume facts, expanded with learnings,
     // without inventing extra projects/metrics.
@@ -150,8 +157,6 @@
       }
     };
 
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id");
     const d = data[id];
 
     const titleEl = document.getElementById("dTitle");
@@ -177,3 +182,4 @@
   </script>
 </body>
 </html>
+

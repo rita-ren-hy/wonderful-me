@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>项目详情 | 任皓韵</title>
+
+  <!-- Projects stylesheet -->
+  <link rel="stylesheet" href="style-projects.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Language Toggle (keeps current id) -->
+      <div class="lang-toggle">
+        <a id="toEN" href="project-detail.html" class="lang-link">EN</a>
+        <span class="lang-sep">｜</span>
+        <span class="lang-current">中文</span>
+      </div>
+
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index-zh.html">你好</a></li>
+          <li><a class="nav-link" href="about-zh.html">介绍</a></li>
+          <li><a class="nav-link" href="program-zh.html">经历</a></li>
+          <li><a class="nav-link active" href="projects-zh.html">项目</a></li>
+          <li><a class="nav-link" href="life-hobbies-zh.html">生活</a></li>
+          <li><a class="nav-link" href="resume-zh.html">简历</a></li>
+          <li><a class="nav-link" href="contact-zh.html">联系</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="detail-head">
+      <a class="back-link" href="projects-zh.html">‹ 返回项目</a>
+      <h1 id="dTitle">加载中…</h1>
+      <p class="muted" id="dMeta"></p>
+    </section>
+
+    <section class="detail-hero" id="dHero"></section>
+    <section class="detail-card" id="dContent"></section>
+
+    <footer class="page-footer">
+      <p class="footer-text">© <span id="year"></span> 任皓韵</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Keep current id when switching language
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id") || "";
+    document.getElementById("toEN").href = `project-detail.html?id=${encodeURIComponent(id)}`;
+
+    // 中文版本：保持事实一致，但按中文语序/语境重写
+    const data = {
+      "UBC CLC PASS Program": {
+        title: "CLC PASS Leader —— 学习分析与项目运营",
+        meta: "UBC · 2025.08 – 2026.02 · 学习分析 / 项目运营",
+        hero: "proj-clc.jpg",
+        content: `
+          <p>
+            以数据与反馈为依据，设计学习支持方案，提升核心商科课程的学习参与度与复习效率，
+            让学生的“学会”与“会做题”更可衡量、更可持续。
+          </p>
+
+          <h2>我的角色</h2>
+          <p>复习课设计 · 学习数据观察 · 项目运营支持 · 多方沟通协调</p>
+
+          <h2>影响与成果</h2>
+          <p>
+            支持多个班级共 350+ 名学生，通过结构化复习与练习，提升知识点清晰度与备考效率，
+            帮助学生更有策略地准备考试。
+          </p>
+
+          <h2>我具体做了什么</h2>
+          <ul>
+            <li>设计并主持每周复习课，强调解题思路与“可复用的做题流程”。</li>
+            <li>基于高频问题与常见薄弱点，制作练习题、讲解稿与关键知识点梳理材料。</li>
+            <li>结合出勤趋势、参与信号与学生反馈，调整节奏与内容结构，持续迭代。</li>
+            <li>与课程团队及相关方对齐目标与时间线，确保支持内容与课程进度一致。</li>
+          </ul>
+
+          <h2>关键收获</h2>
+          <ul>
+            <li>小步快跑的迭代（反馈 → 调整 → 再验证）能在长期里显著改善学习体验。</li>
+            <li>数据的价值不在“看起来很分析”，而在于让决策更清晰、执行更有效——教育场景同样如此。</li>
+          </ul>
+
+          <h2>工具</h2>
+          <p>Excel · 学习进度跟踪 · 教学材料设计与整理</p>
+        `
+      },
+
+      "UBC Bizchina": {
+        title: "UBC BizChina —— 人力资源策略与组织发展",
+        meta: "UBC · 2023.05 – 2024.05 · 人力资源策略 / 组织设计",
+        hero: "proj-bizchina.jpg",
+        content: `
+          <p>
+            在快速扩张的学生组织中，通过更结构化的人力资源策略，
+            提升团队稳定性与交接连续性，让组织运转更“靠系统”，而不是靠个人硬扛。
+          </p>
+
+          <h2>我的角色</h2>
+          <p>人力规划 · 招募与培养流程 · 流程标准化 · 跨团队协调</p>
+
+          <h2>影响与成果</h2>
+          <p>
+            通过规范招募、入职与交接流程，提升组织运行的清晰度与可复制性，
+            减少换届期间的摩擦与信息断层。
+          </p>
+
+          <h2>我具体做了什么</h2>
+          <ul>
+            <li>梳理各团队岗位职责，明确边界与期望，减少重复与模糊地带。</li>
+            <li>优化招募与 onboarding 结构，让新成员更快进入状态、承担责任。</li>
+            <li>沉淀交接要点与关键任务清单，提高换届/交接的准备度。</li>
+            <li>跨职能对齐时间线与执行细节，推动内部项目按节奏落地。</li>
+          </ul>
+
+          <h2>关键收获</h2>
+          <ul>
+            <li>组织设计不是“概念”，而是解决执行问题的工具：职责与交接清晰，很多运营问题会自动消失。</li>
+            <li>可持续增长依赖系统与机制，而不是“英雄式加班”，尤其在成员轮换频繁的团队里。</li>
+          </ul>
+
+          <h2>工具</h2>
+          <p>文档/表格协作 · 流程沉淀 · 多方沟通协调</p>
+        `
+      },
+
+      "UBC CUBS": {
+        title: "UBC CUBS —— 对外合作与筹款策略",
+        meta: "UBC · 2022.12 – 2023.10 · 筹款 / 谈判 / 成本优化",
+        hero: "proj-cubs.jpg",
+        content: `
+          <p>
+            通过赞助谈判、筹款规划与成本控制，支持社区导向活动的资源获取与长期开展。
+          </p>
+
+          <h2>我的角色</h2>
+          <p>外部合作对接 · 预算规划 · 商务谈判 · 成本分析</p>
+
+          <h2>影响与成果</h2>
+          <p>
+            通过合作拓展与供应商议价，提升活动资源保障能力，
+            同时改善成本效率，为重复举办的活动留出更多执行空间。
+          </p>
+
+          <h2>我具体做了什么</h2>
+          <ul>
+            <li>对接外部供应商，比较不同报价结构，识别可节省成本的环节。</li>
+            <li>配合筹款规划，在参与度目标与财务可持续之间做平衡。</li>
+            <li>在预算受限情况下评估取舍，保证活动质量的同时强化成本控制。</li>
+          </ul>
+
+          <h2>关键收获</h2>
+          <ul>
+            <li>谈判的结果往往取决于准备充分与备选方案清晰，而不仅仅是表达能力。</li>
+            <li>成本优化能提升执行灵活性，尤其对资源有限且需要反复落地的活动来说。</li>
+          </ul>
+
+          <h2>工具</h2>
+          <p>成本对比表 · 合作方沟通 · 基础预算规划</p>
+        `
+      },
+
+      "2024 Learning Analytics Hackathon": {
+        title: "2024 学习分析黑客松（Team HAX）",
+        meta: "温哥华 · 2024.10 · 仪表板设计 / 参与度指标 / 数据叙事",
+        hero: "proj-hackathon.jpg",
+        content: `
+          <p>
+            以“让在线讨论更有效”为目标，设计以分析驱动的仪表板，
+            让教师与学生能更快识别讨论质量问题，并减少低质量参与行为。
+          </p>
+
+          <h2>我的角色</h2>
+          <p>指标设计 · 仪表板制作 · 数据分析（Python / Tableau）· 数据叙事</p>
+
+          <h2>影响与成果</h2>
+          <p>
+            因输出对教学场景可直接落地的洞察，获得
+            <em>“Most Relevant to Teaching and Learning”</em> 奖项。
+          </p>
+
+          <h2>我具体做了什么</h2>
+          <ul>
+            <li>推动将“参与度”从纯计数指标升级为更关注质量与相关性的衡量方式。</li>
+            <li>针对教师与学生分别设计视图，强调清晰度与“下一步怎么做”。</li>
+            <li>把分析结果转化为简洁的视觉叙事，帮助教学行动更直观、更可执行。</li>
+          </ul>
+
+          <h2>关键收获</h2>
+          <ul>
+            <li>好的仪表板会减少解释成本，让人一眼知道该怎么行动。</li>
+            <li>指标设计本质上是策略：你选择衡量什么，人们就会优化什么。</li>
+          </ul>
+
+          <h2>工具</h2>
+          <p>Python · Tableau · 数据叙事</p>
+        `
+      },
+
+      "2024 L’Oréal Case Competition": {
+        title: "欧莱雅案例竞赛项目 —— 品牌策略与消费者分析（DyeNamic）",
+        meta: "2024.01 · 消费者洞察 / 产品概念 / Go-to-Market",
+        hero: "proj-loreal.jpg",
+        content: `
+          <p>
+            将消费者洞察转化为产品与市场策略，设计“个性化居家染发”的完整体验，
+            从痛点出发串联产品概念、价值主张与落地路径。
+          </p>
+
+          <h2>我的角色</h2>
+          <p>消费者研究 · 市场分析 · 价值主张设计 · 策略结构化</p>
+
+          <h2>影响与成果</h2>
+          <p>
+            输出从洞察到执行的端到端方案，将个性化与可持续理念融合到可扩张的增长策略中。
+          </p>
+
+          <h2>我具体做了什么</h2>
+          <ul>
+            <li>梳理居家染发的核心痛点（如颜色不准、选择困难、损伤担忧等）。</li>
+            <li>参与构建平台式概念：用引导式推荐与更清晰的用户旅程降低决策成本。</li>
+            <li>协助梳理定价逻辑、渠道策略与分阶段路线图（从预发布测试到长期增长）。</li>
+          </ul>
+
+          <h2>关键收获</h2>
+          <ul>
+            <li>强产品概念的起点，是精准理解“现有方案为什么对用户不够好”。</li>
+            <li>好的策略要把洞察 → 主张 → 执行串起来，并清晰呈现取舍。</li>
+          </ul>
+
+          <h2>工具</h2>
+          <p>案头研究 · 消费者洞察整合 · 策略框架搭建</p>
+        `
+      },
+
+      "2022 Cleanbc Case Competition": {
+        title: "2022 CleanBC 策略挑战 —— 低碳转型方案",
+        meta: "温哥华 · 2022.09 · 可持续策略 / 公共政策 / 风险分析",
+        hero: "proj-cleanbc.jpg",
+        content: `
+          <p>
+            围绕 BC 省的低碳目标，提出以政策为牵引的策略框架，
+            加速低碳建筑材料在真实市场中的采用与扩散。
+          </p>
+
+          <h2>我的角色</h2>
+          <p>政策研究 · 策略结构化 · 风险与财务可行性分析</p>
+
+          <h2>影响与成果</h2>
+          <p>
+            交付整合型框架，连接政策工具、市场激励与落地可行性，
+            并与 CleanBC 2030 目标保持一致。
+          </p>
+
+          <h2>我具体做了什么</h2>
+          <ul>
+            <li>分析采用障碍（如前期成本高、可获得性不足、市场激励弱等）。</li>
+            <li>参与设计组合方案：公共投资 + 监管机制 + 定向激励，形成协同杠杆。</li>
+            <li>支持风险评估，关注利益相关方、供应质量与执行约束，确保建议可落地。</li>
+          </ul>
+
+          <h2>关键收获</h2>
+          <ul>
+            <li>政策策略往往需要“组合拳”，单一措施很难改变系统行为。</li>
+            <li>可行性工作（风险、激励、约束）决定了一个想法能否变成可实施方案。</li>
+          </ul>
+
+          <h2>工具</h2>
+          <p>政策研究 · 结构化推理 · 风险分析</p>
+        `
+      }
+    };
+
+    const d = data[id];
+
+    const titleEl = document.getElementById("dTitle");
+    const metaEl  = document.getElementById("dMeta");
+    const heroEl  = document.getElementById("dHero");
+    const contEl  = document.getElementById("dContent");
+
+    if (!d) {
+      titleEl.textContent = "未找到该项目";
+      metaEl.textContent = "该项目不存在或链接有误。";
+      heroEl.innerHTML = "";
+      contEl.innerHTML = `
+        <div class="detail-inner">
+          <p class="muted">请返回项目页面，选择其他内容查看。</p>
+        </div>
+      `;
+    } else {
+      titleEl.textContent = d.title;
+      metaEl.textContent = d.meta;
+      heroEl.innerHTML = `<img class="hero-img" src="${d.hero}" alt="">`;
+      contEl.innerHTML = `<div class="detail-inner">${d.content}</div>`;
+    }
+  </script>
+</body>
+</html>

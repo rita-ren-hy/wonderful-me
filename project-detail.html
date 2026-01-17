@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Project Detail | Rita Ren</title>
 
+  <!-- Projects stylesheet -->
   <link rel="stylesheet" href="style-projects.css" />
 </head>
 
@@ -43,129 +44,283 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Projects data (aligned with your projects.html order)
     const data = {
-      "case-competition-1": {
-        title: "Case Competition — Strategy Recommendation",
-        meta: "Vancouver · 2025 · Problem Framing / Market Sizing / Storytelling",
-        hero: "proj-case.jpg",
+      "clc": {
+        title: "CLC PASS Leader — Learning Analytics & Program Operations",
+        meta: "UBC · Sep 2023 – Apr 2025 · Learning Analytics / Program Ops",
+        hero: "proj-clc.jpg",
         content: `
-          <h2>Context</h2>
           <p>
-            A case competition focused on producing a decision-ready recommendation under limited time and incomplete information.
-            My main goal was to keep the analysis structured and the storyline crisp.
+            Designing data-informed learning support programs to improve student engagement and instructional effectiveness
+            in core business courses.
+          </p>
+
+          <h2>My role</h2>
+          <p>Session design · Learning analytics · Program operations · Stakeholder coordination</p>
+
+          <h2>Impact</h2>
+          <p>
+            Supported 350+ students across multiple sections, improving learning clarity and exam preparedness through
+            structured, data-informed review sessions.
           </p>
 
           <h2>What I worked on</h2>
           <ul>
             <li>
-              <strong>Problem framing:</strong>
-              clarified the decision scope, key constraints, and what “success” should look like for the client.
+              Designed and facilitated weekly review sessions that emphasized problem-solving workflows and exam readiness.
             </li>
             <li>
-              <strong>Market & customer structure:</strong>
-              drafted a simple market sizing logic and translated customer needs into a prioritized target segment.
+              Built practice materials and walkthroughs based on recurring student questions and common learning gaps.
             </li>
             <li>
-              <strong>Trade-offs & recommendation:</strong>
-              compared options and packaged the final proposal into an action-oriented narrative.
+              Iterated session pacing and content using attendance trends, engagement signals, and student feedback.
+            </li>
+            <li>
+              Coordinated with course teams and stakeholders to keep support aligned with course objectives and timelines.
             </li>
           </ul>
 
-          <h2>What I learned</h2>
+          <h2>Key takeaways</h2>
           <ul>
             <li>
-              Good strategy work is not about adding more slides — it’s about making assumptions visible and decisions easy.
+              Small iteration loops (feedback → adjustment → re-test) can meaningfully improve learning experiences over time.
             </li>
             <li>
-              A strong recommendation always includes what you chose <em>not</em> to do (and why).
+              Analytics creates value when it leads to clearer decisions and better execution, even in education settings.
             </li>
           </ul>
 
           <h2>Tools</h2>
-          <p>Excel · Desk research · Slide storytelling</p>
+          <p>Excel · Learning progress tracking · Instructional design materials</p>
         `
       },
 
-      "student-club-ops": {
-        title: "Student Organization — Ops & Execution",
-        meta: "UBC · 2024 – 2025 · Operations / Coordination / Process Improvement",
-        hero: "proj-club.jpg",
+      "bizchina": {
+        title: "BizChina UBC — HR Strategy & Organizational Development",
+        meta: "UBC · Sep 2023 – Apr 2024 · HR Strategy / Org Design",
+        hero: "proj-bizchina.jpg",
         content: `
-          <h2>Context</h2>
           <p>
-            Supported a campus organization through event operations and member engagement work.
-            The focus was building repeatable processes so execution stayed smooth as activities scaled.
+            Strengthening organizational stability and leadership continuity through structured HR strategy in a fast-growing student society.
+          </p>
+
+          <h2>My role</h2>
+          <p>HR planning · Recruitment strategy · Process standardization · Leadership coordination</p>
+
+          <h2>Impact</h2>
+          <p>
+            Improved operational clarity by formalizing recruitment, onboarding, and role transition processes to reduce friction during leadership turnover.
           </p>
 
           <h2>What I worked on</h2>
           <ul>
             <li>
-              <strong>Event operations:</strong>
-              created run-of-show plans, coordinated logistics, and aligned owners to timelines.
+              Reviewed role responsibilities across teams to clarify expectations and reduce overlap or ambiguity.
             </li>
             <li>
-              <strong>Promotion support:</strong>
-              helped with outreach and content planning to improve attendance and engagement.
+              Supported recruitment and onboarding structure so new members could ramp faster with clearer ownership.
             </li>
             <li>
-              <strong>Process improvements:</strong>
-              collected feedback and proposed small changes that reduced friction for future events.
+              Helped improve leadership transition readiness by documenting key responsibilities and handover practices.
+            </li>
+            <li>
+              Coordinated across functions to align timelines, priorities, and execution details for internal initiatives.
             </li>
           </ul>
 
-          <h2>What I learned</h2>
+          <h2>Key takeaways</h2>
           <ul>
             <li>
-              Ops is a leverage function: clarity and cadence often matter more than “working harder.”
+              Organization design is a practical execution tool: clarity in roles and handoffs prevents recurring operational issues.
             </li>
             <li>
-              Small improvements compound when you repeat the same workflow.
+              Sustainable growth depends on systems, not heroics—especially when teams rotate frequently.
             </li>
           </ul>
 
           <h2>Tools</h2>
-          <p>Google Workspace · Notion/Docs · Basic tracking (attendance/feedback)</p>
+          <p>Docs/Spreadsheets · Process documentation · Stakeholder coordination</p>
         `
       },
 
-      "analytics-competition": {
-        title: "Analytics Challenge — Insights to Actions",
-        meta: "UBC · 2025 · EDA / Visualization / Recommendations",
-        hero: "proj-analytics.jpg",
+      "cubs": {
+        title: "CUBS — External Relations & Fundraising Strategy",
+        meta: "UBC · Sep 2022 – Apr 2023 · Fundraising / Negotiation / Cost Optimization",
+        hero: "proj-cubs.jpg",
         content: `
-          <h2>Context</h2>
           <p>
-            An analytics-style challenge where the objective was to turn a dataset into insights and communicate recommendations clearly.
+            Supporting community-focused initiatives through negotiation, fundraising, and cost optimization.
+          </p>
+
+          <h2>My role</h2>
+          <p>External partnerships · Budget planning · Negotiation · Cost analysis</p>
+
+          <h2>Impact</h2>
+          <p>
+            Enabled community initiatives by securing partnerships and improving event cost efficiency through vendor negotiation.
           </p>
 
           <h2>What I worked on</h2>
           <ul>
             <li>
-              <strong>Data validation:</strong>
-              checked definitions, handled missing values, and validated metrics before building any narrative.
+              Engaged external vendors and compared pricing structures to identify cost-saving opportunities for events.
             </li>
             <li>
-              <strong>Key driver analysis:</strong>
-              identified patterns that explained performance differences across segments.
+              Supported fundraising planning by aligning activities with both engagement goals and financial sustainability.
             </li>
             <li>
-              <strong>Recommendation:</strong>
-              translated insights into a short list of actions with rationale and expected impact.
+              Helped evaluate trade-offs under limited budgets to maintain event quality while improving cost control.
             </li>
           </ul>
 
-          <h2>What I learned</h2>
+          <h2>Key takeaways</h2>
           <ul>
             <li>
-              The fastest way to lose trust is to skip metric validation — clarity beats complexity.
+              Negotiation outcomes are driven by preparation and clear alternatives, not just persuasion.
             </li>
             <li>
-              Analytics creates value only when it leads to decisions someone can execute.
+              Cost optimization increases execution flexibility—especially for recurring, resource-constrained initiatives.
             </li>
           </ul>
 
           <h2>Tools</h2>
-          <p>Excel · Visualization · Slides (Python/R optional)</p>
+          <p>Cost comparison sheets · Partner outreach · Basic budgeting</p>
+        `
+      },
+
+      "learning-hackathon": {
+        title: "Learning Analytics Hackathon (Team HAX)",
+        meta: "Vancouver · Oct 2024 · Dashboard Design / Engagement Metrics / Data Storytelling",
+        hero: "proj-hackathon.jpg",
+        content: `
+          <p>
+            Designing analytics-driven dashboards to improve discussion quality and reduce disengaged behavior in online learning environments.
+          </p>
+
+          <h2>My role</h2>
+          <p>Metric design · Dashboard development · Data analysis (Python / Tableau) · Insight storytelling</p>
+
+          <h2>Impact</h2>
+          <p>
+            Won <em>“Most Relevant to Teaching and Learning”</em> for delivering actionable instructor- and student-facing insights.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              Helped redefine engagement measurement beyond raw activity counts to reflect quality and relevance.
+            </li>
+            <li>
+              Built dashboards tailored to instructors and students, focusing on clarity and decision usefulness.
+            </li>
+            <li>
+              Translated analytical outputs into a simple visual narrative that supported practical teaching actions.
+            </li>
+          </ul>
+
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>
+              Dashboards succeed when they reduce interpretation effort and make next steps obvious.
+            </li>
+            <li>
+              Metric design is strategy: what you measure changes what people optimize for.
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Python · Tableau · Data storytelling</p>
+        `
+      },
+
+      "loreal": {
+        title: "Brand Strategy & Consumer Analytics Project — L’Oréal (DyeNamic)",
+        meta: "Jan 2024 · Consumer Insights / Product Concept / Go-to-Market Strategy",
+        hero: "proj-loreal.jpg",
+        content: `
+          <p>
+            Designing a personalized at-home hair dye experience by translating consumer insights into product and go-to-market strategy.
+          </p>
+
+          <h2>My role</h2>
+          <p>Consumer research · Market analysis · Value proposition design · Strategy development</p>
+
+          <h2>Impact</h2>
+          <p>
+            Developed an end-to-end concept linking personalization, sustainability, and a scalable growth strategy.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              Identified key consumer pain points in at-home dyeing (e.g., color inaccuracy, product selection confusion, and hair damage concerns).
+            </li>
+            <li>
+              Contributed to a platform concept combining guided recommendations and a clearer end-to-end user journey.
+            </li>
+            <li>
+              Helped outline pricing logic, channel strategy, and a phased roadmap from pre-launch testing to long-term growth.
+            </li>
+          </ul>
+
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>
+              Strong product concepts start with a precise understanding of why current solutions fail for users.
+            </li>
+            <li>
+              A good strategy connects insight → proposition → execution, with trade-offs made explicit.
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Desk research · Consumer insight synthesis · Strategy structuring</p>
+        `
+      },
+
+      "cleanbc": {
+        title: "CleanBC 2030 Strategy Challenge — Low-Carbon Transition",
+        meta: "Vancouver · Sep 2022 · Sustainability Strategy / Public Policy / Risk Analysis",
+        hero: "proj-cleanbc.jpg",
+        content: `
+          <p>
+            Developing a policy-driven strategy to accelerate the adoption of low-carbon building materials in British Columbia.
+          </p>
+
+          <h2>My role</h2>
+          <p>Policy research · Strategy structuring · Risk & financial analysis</p>
+
+          <h2>Impact</h2>
+          <p>
+            Delivered an integrated framework linking policy levers, market incentives, and feasibility considerations aligned with CleanBC 2030 goals.
+          </p>
+
+          <h2>What I worked on</h2>
+          <ul>
+            <li>
+              Analyzed structural barriers to adoption such as higher upfront costs, limited accessibility, and weak market incentives.
+            </li>
+            <li>
+              Contributed to solution design combining public investment, regulation mechanisms, and targeted incentives.
+            </li>
+            <li>
+              Supported risk assessment around stakeholders, supply quality, and implementation trade-offs to keep recommendations actionable.
+            </li>
+          </ul>
+
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>
+              Policy strategy needs coordinated levers—single-point solutions rarely shift system behavior.
+            </li>
+            <li>
+              Feasibility work (risks, incentives, execution constraints) is what turns ideas into implementable plans.
+            </li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Policy research · Structured reasoning · Risk analysis</p>
         `
       }
     };
@@ -191,9 +346,10 @@
     } else {
       titleEl.textContent = d.title;
       metaEl.textContent = d.meta;
-      heroEl.innerHTML = \`<img class="hero-img" src="\${d.hero}" alt="">\`;
-      contEl.innerHTML = \`<div class="detail-inner">\${d.content}</div>\`;
+      heroEl.innerHTML = `<img class="hero-img" src="${d.hero}" alt="">`;
+      contEl.innerHTML = `<div class="detail-inner">${d.content}</div>`;
     }
   </script>
 </body>
 </html>
+

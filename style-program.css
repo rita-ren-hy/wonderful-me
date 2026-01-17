@@ -414,6 +414,42 @@ body{
   color: rgba(31, 42, 50, .4);
   pointer-events: none;
 }
+/* =====================
+   Mobile: avoid lang toggle covering nav
+===================== */
+@media (max-width: 720px){
+
+  /* 让 header 内部变成“左：语言 / 右：nav”一行 */
+  .header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  /* 语言切换不再 fixed，占位跟着 header 走 */
+  .lang-toggle{
+    position: static;
+    top: auto;
+    left: auto;
+    z-index: auto;
+    padding: 7px 12px;
+  }
+
+  /* nav 右侧可横向滚动，避免挤爆 */
+  .site-nav{
+    margin-left: 0;
+    max-width: calc(100vw - 150px); /* 预留给 EN｜中文 */
+  }
+
+  .nav-list{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-list::-webkit-scrollbar{ display:none; }
+}
+
 
 
 

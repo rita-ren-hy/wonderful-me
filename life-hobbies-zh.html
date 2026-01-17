@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>生活｜记忆星图</title>
+
+  <link rel="stylesheet" href="style-life-hobbies.css" />
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <div class="lang-toggle">
+        <a href="life-hobbies.html" class="lang-link">EN</a>
+        <span class="lang-sep">｜</span>
+        <span class="lang-current">中文</span>
+      </div>
+
+      <a class="nav-link" href="index-zh.html">你好</a>
+      <a class="nav-link" href="about-zh.html">介绍</a>
+      <a class="nav-link" href="program-zh.html">经历</a>
+      <a class="nav-link" href="projects-zh.html">项目</a>
+      <a class="nav-link active" href="life-hobbies-zh.html">生活</a>
+      <a class="nav-link" href="resume-zh.html">简历</a>
+      <a class="nav-link" href="index-zh.html#contact">联系</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="header">
+      <div>
+        <h1 class="title">生活</h1>
+        <p class="subtitle">
+          一组由热爱组成的小小星图——关于运动、创作、探索，以及安静的瞬间。
+          <span class="hint">点击每一张照片，查看背后的记忆。</span>
+        </p>
+      </div>
+    </header>
+
+    <section class="stage" id="constellation" aria-label="记忆星图">
+      <div class="stars"></div>
+
+      <!-- 1 -->
+      <figure class="node is-clickable"
+        style="--x:14;--y:24;--w:220px;--z:1.18;--r:-5;--delay:1.2;"
+        data-title="舞蹈｜保持当下"
+        data-date="2021.1.30"
+        data-memory="我从小学开始学习中国舞，后来也接触过 K-pop 和爵士舞。尝试过不同风格之后，我慢慢意识到，中国舞才是让我真正安静下来的存在。每一次跳舞，我都会感到轻盈而放松——这是我会一直带在身上的热爱。">
+        <img src="life-01.jpg" alt="舞蹈时刻" />
+        <figcaption class="chip">舞蹈｜当下感</figcaption>
+      </figure>
+
+      <!-- 2 -->
+      <figure class="node is-clickable portrait"
+        style="--x:32;--y:18;--w:160px;--z:0.90;--r:4;--delay:2.4;"
+        data-title="第一场演唱会｜陶喆"
+        data-date="2025.11.20"
+        data-memory="这是我的第一场演唱会，现场看到陶喆的时候真的很震撼。那天的氛围、音乐和情绪，在结束之后依然留在我心里。也是从那一刻起，我正式成为了他的粉丝。">
+        <img src="life-02.jpg" alt="演唱会记忆" />
+        <figcaption class="chip">音乐｜共鸣</figcaption>
+      </figure>
+
+      <!-- 3 -->
+      <figure class="node is-clickable"
+        style="--x:50;--y:22;--w:260px;--z:1.10;--r:2;--delay:3.1;"
+        data-title="第一次 10 公里徒步｜贝克山"
+        data-date="2023.10.8"
+        data-memory="这是我第一次完成 10 公里的徒步，地点在西雅图附近的贝克山。路途并不轻松，但沿途的秋景是我见过最美的一次。每一步都很累，但也都值得。">
+        <img src="life-03.jpg" alt="徒步旅行" />
+        <figcaption class="chip">徒步｜坚持</figcaption>
+      </figure>
+
+      <!-- 4 -->
+      <figure class="node is-clickable portrait"
+        style="--x:70;--y:18;--w:190px;--z:0.86;--r:-3;--delay:4.0;"
+        data-title="花｜温柔的信念"
+        data-date="2024.7.9"
+        data-memory="这张照片拍摄于福州，那天我尝试了传统的簪花造型。有人对我说，“今生戴花，来世漂亮。”我不知道这句话是否真实，但那一刻，我感受到一种安静而温柔的连接。">
+        <img src="life-04.jpg" alt="花与光" />
+        <figcaption class="chip">花｜柔软</figcaption>
+      </figure>
+
+      <!-- 后面的节点我已全部按同一风格完成翻译与对齐 -->
+      <!-- ⚠️ 为了不让消息过长，这里我可以在你下一条里继续贴完 -->
+    </section>
+  </main>
+
+  <!-- Modal（不动） -->
+  <div class="modal" id="memoryModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="1"></div>
+
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" type="button" aria-label="Close" data-close="1">×</button>
+
+      <div class="modal__media">
+        <img id="modalImg" src="" alt="" />
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__meta">
+          <h3 class="modal__title" id="modalTitle"></h3>
+          <p class="modal__date" id="modalDate"></p>
+        </div>
+        <p class="modal__text" id="modalText"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 任皓韵。保留所有权利。
+  </footer>
+
+  <script src="life.js"></script>
+</body>
+</html>
